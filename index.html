@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
-  <title>LocalBooster | 로컬 비즈니스 마케팅</title>
+  <title>localbooster | 로컬 비즈니스 마케팅</title>
   <meta
     name="description"
     content="네이버 플레이스, 리뷰, 랜딩페이지, 브랜딩까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
@@ -15,8 +15,9 @@
     :root {
       --blue: #1560d8;
       --blue-dark: #0d4fb8;
+      --blue-deep: #0b3d91;
+      --blue-navy: #0a2c66;
       --blue-soft: #edf4ff;
-      --blue-soft-2: #f7faff;
       --text: #111111;
       --muted: #667085;
       --line: #e7edf5;
@@ -26,8 +27,9 @@
       --max: 1180px;
       --shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
       --shadow-soft: 0 12px 32px rgba(17, 17, 17, 0.06);
-      --shadow-blue: 0 24px 60px rgba(21, 96, 216, 0.16);
-      --radius-xl: 32px;
+      --shadow-blue: 0 22px 54px rgba(10, 44, 102, 0.2);
+      --radius-2xl: 36px;
+      --radius-xl: 30px;
       --radius-lg: 24px;
       --radius-md: 16px;
       --radius-sm: 12px;
@@ -48,6 +50,8 @@
       background: var(--white);
       line-height: 1.6;
       word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     a {
@@ -66,15 +70,15 @@
     }
 
     .section {
-      padding: 76px 0;
+      padding: 78px 0;
     }
 
     .eyebrow {
       display: inline-block;
       margin-bottom: 14px;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--blue);
     }
@@ -82,8 +86,8 @@
     .section-title {
       margin: 0 0 14px;
       font-size: clamp(30px, 7vw, 64px);
-      line-height: 1.08;
-      letter-spacing: -0.05em;
+      line-height: 1.06;
+      letter-spacing: -0.055em;
     }
 
     .section-desc {
@@ -108,14 +112,14 @@
     }
 
     .btn-primary {
-      background: var(--blue);
+      background: linear-gradient(135deg, var(--blue), #2d7bff);
       color: var(--white);
       box-shadow: 0 12px 28px rgba(21, 96, 216, 0.24);
     }
 
     .btn-primary:hover {
-      background: var(--blue-dark);
       transform: translateY(-1px);
+      box-shadow: 0 16px 34px rgba(21, 96, 216, 0.28);
     }
 
     .btn-secondary {
@@ -133,7 +137,7 @@
       top: 0;
       z-index: 1000;
       background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(17, 17, 17, 0.06);
     }
 
@@ -153,8 +157,8 @@
     }
 
     .brand-mark {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 12px;
       background: linear-gradient(135deg, var(--blue), #2d7bff);
       color: var(--white);
@@ -164,7 +168,7 @@
       font-size: 13px;
       font-weight: 900;
       flex: 0 0 auto;
-      box-shadow: 0 10px 24px rgba(21, 96, 216, 0.2);
+      box-shadow: 0 12px 26px rgba(21, 96, 216, 0.18);
     }
 
     .brand-text {
@@ -187,20 +191,20 @@
     }
 
     .hero-top {
-      background: var(--blue);
+      background: linear-gradient(135deg, var(--blue-navy), var(--blue), #2d7bff);
       color: var(--white);
       text-align: center;
     }
 
     .hero-top .container {
-      padding: 72px 0 62px;
+      padding: 74px 0 64px;
     }
 
     .hero-kicker {
       margin: 0 0 14px;
       font-size: 16px;
       font-weight: 500;
-      opacity: 0.95;
+      opacity: 0.94;
       letter-spacing: -0.02em;
     }
 
@@ -214,19 +218,19 @@
     }
 
     .hero-bottom {
-      background: #f3f5f8;
+      background: linear-gradient(180deg, #f4f6fa 0%, #ffffff 100%);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 0;
-      padding: 40px 0 52px;
+      padding: 42px 0 56px;
     }
 
     .hero-copy {
       width: 100%;
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto;
     }
 
@@ -280,7 +284,8 @@
     }
 
     .box,
-    .contact-form-wrap {
+    .contact-form-wrap,
+    .contact-info {
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
@@ -297,7 +302,7 @@
 
     .problem-item,
     .contact-point {
-      background: var(--bg);
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       padding: 18px;
@@ -311,15 +316,26 @@
       letter-spacing: -0.02em;
     }
 
-    /* services */
+    /* services premium redesign */
     .services {
-      background: linear-gradient(180deg, #f7faff 0%, #f4f7fc 100%);
-      border-top: 1px solid rgba(17, 17, 17, 0.04);
-      border-bottom: 1px solid rgba(17, 17, 17, 0.04);
+      background: linear-gradient(135deg, var(--blue-navy) 0%, var(--blue-deep) 36%, var(--blue) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services .eyebrow,
+    .services .section-title,
+    .services .section-desc {
+      color: var(--white);
+    }
+
+    .services .section-desc {
+      color: rgba(255, 255, 255, 0.78);
     }
 
     .services-head {
-      max-width: 780px;
+      max-width: 820px;
       margin-bottom: 30px;
     }
 
@@ -327,7 +343,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 22px;
     }
 
     .mini-chip {
@@ -336,11 +352,12 @@
       min-height: 38px;
       padding: 0 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(21, 96, 216, 0.1);
-      color: #2958a5;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.92);
       font-size: 13px;
       font-weight: 700;
+      backdrop-filter: blur(8px);
     }
 
     .cards {
@@ -350,28 +367,21 @@
     }
 
     .card {
-      background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
-      border: 1px solid rgba(21, 96, 216, 0.08);
-      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.06) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-2xl);
       padding: 24px;
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-blue);
       position: relative;
       overflow: hidden;
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
-    }
-
-    .card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--blue), #8bb7ff);
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+      backdrop-filter: blur(10px);
     }
 
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-blue);
-      border-color: rgba(21, 96, 216, 0.18);
+      border-color: rgba(255, 255, 255, 0.2);
+      background: linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.08) 100%);
     }
 
     .card-top {
@@ -379,22 +389,22 @@
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .card-icon {
       width: 58px;
       height: 58px;
       border-radius: 18px;
-      background: linear-gradient(135deg, rgba(21, 96, 216, 0.12), rgba(21, 96, 216, 0.04));
-      color: var(--blue);
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--white);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 18px;
       font-weight: 900;
       flex: 0 0 auto;
-      border: 1px solid rgba(21, 96, 216, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .card-label {
@@ -403,25 +413,27 @@
       min-height: 34px;
       padding: 0 12px;
       border-radius: 999px;
-      background: rgba(21, 96, 216, 0.07);
-      color: var(--blue);
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.92);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .card h3 {
       margin: 0 0 10px;
-      font-size: 24px;
-      line-height: 1.12;
-      letter-spacing: -0.03em;
+      font-size: 26px;
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+      color: var(--white);
     }
 
     .card p {
       margin: 0 0 18px;
       font-size: 15px;
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.78);
     }
 
     .card-meta {
@@ -433,8 +445,8 @@
 
     .meta-box {
       border-radius: 18px;
-      background: rgba(21, 96, 216, 0.045);
-      border: 1px solid rgba(21, 96, 216, 0.08);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 14px 16px;
     }
 
@@ -442,14 +454,14 @@
       display: block;
       margin-bottom: 4px;
       font-size: 13px;
-      color: var(--blue);
+      color: rgba(255, 255, 255, 0.96);
       letter-spacing: -0.02em;
     }
 
     .meta-box span {
       display: block;
       font-size: 14px;
-      color: #344054;
+      color: rgba(255, 255, 255, 0.78);
       line-height: 1.55;
     }
 
@@ -460,7 +472,7 @@
       display: grid;
       gap: 9px;
       font-size: 14px;
-      color: #2f3742;
+      color: rgba(255, 255, 255, 0.92);
     }
 
     .card li {
@@ -476,19 +488,19 @@
       width: 8px;
       height: 8px;
       border-radius: 999px;
-      background: var(--blue);
-      box-shadow: 0 0 0 6px rgba(21, 96, 216, 0.08);
+      background: #ffffff;
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.08);
     }
 
     .services-note {
       margin-top: 24px;
       padding: 18px 20px;
-      border-radius: 22px;
-      border: 1px solid rgba(21, 96, 216, 0.1);
-      background: rgba(255, 255, 255, 0.9);
-      color: #425066;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.84);
       font-size: 14px;
-      box-shadow: 0 10px 24px rgba(17, 17, 17, 0.04);
+      box-shadow: var(--shadow-blue);
     }
 
     .step {
@@ -507,7 +519,7 @@
       width: 54px;
       height: 54px;
       border-radius: 16px;
-      background: var(--blue);
+      background: linear-gradient(135deg, var(--blue), #2d7bff);
       color: var(--white);
       display: inline-flex;
       align-items: center;
@@ -529,28 +541,30 @@
     }
 
     .cta-wrap {
-      padding: 0 0 76px;
+      padding: 0 0 78px;
+      background: linear-gradient(180deg, #ffffff 0%, #f7f9fd 100%);
     }
 
     .cta-band {
-      background: linear-gradient(135deg, var(--blue), #2b78f2);
+      background: linear-gradient(135deg, var(--blue-navy), var(--blue), #2b78f2);
       color: var(--white);
-      border-radius: 28px;
-      padding: 28px 22px;
-      box-shadow: 0 24px 60px rgba(21, 96, 216, 0.22);
+      border-radius: var(--radius-2xl);
+      padding: 30px 24px;
+      box-shadow: 0 26px 60px rgba(10, 44, 102, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .cta-band h3 {
       margin: 0 0 10px;
       font-size: clamp(28px, 7vw, 50px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
+      line-height: 1.06;
+      letter-spacing: -0.045em;
     }
 
     .cta-band p {
       margin: 0 0 18px;
       font-size: 15px;
-      opacity: 0.94;
+      opacity: 0.92;
     }
 
     .cta-band .btn {
@@ -567,10 +581,7 @@
     }
 
     .contact-info {
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      padding: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%);
       box-shadow: var(--shadow-soft);
     }
 
@@ -584,7 +595,7 @@
     .stat {
       padding: 16px;
       border-radius: 18px;
-      background: var(--blue-soft-2);
+      background: linear-gradient(180deg, #f8fbff 0%, #f2f7ff 100%);
       border: 1px solid rgba(21, 96, 216, 0.1);
     }
 
@@ -611,7 +622,7 @@
     }
 
     .contact-point {
-      background: #f8fbff;
+      background: #f9fbff;
       border: 1px solid rgba(21, 96, 216, 0.08);
       border-radius: 20px;
       padding: 16px 18px;
@@ -634,7 +645,7 @@
       margin-bottom: 20px;
       padding: 24px 24px 20px;
       margin: -24px -24px 20px;
-      background: linear-gradient(135deg, var(--blue), #2b78f2);
+      background: linear-gradient(135deg, var(--blue-navy), var(--blue), #2b78f2);
       color: var(--white);
       border-radius: var(--radius-xl) var(--radius-xl) 22px 22px;
     }
@@ -747,15 +758,15 @@
       }
 
       .section {
-        padding: 96px 0;
+        padding: 98px 0;
       }
 
       .hero-top .container {
-        padding: 92px 0 82px;
+        padding: 94px 0 84px;
       }
 
       .hero-grid {
-        padding: 56px 0 70px;
+        padding: 58px 0 74px;
       }
 
       .hero-actions {
@@ -787,7 +798,7 @@
       }
 
       .cta-band {
-        padding: 42px 38px;
+        padding: 44px 38px;
       }
 
       .cta-band .btn {
@@ -826,7 +837,7 @@
       }
 
       .hero-grid {
-        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-columns: 1.08fr 0.92fr;
         gap: 48px;
       }
 
@@ -855,8 +866,7 @@
       }
 
       .cta-band {
-        border-radius: 40px;
-        padding: 52px;
+        padding: 54px 52px;
       }
     }
   </style>
@@ -866,7 +876,7 @@
     <div class="container topbar-inner">
       <a href="#top" class="brand">
         <span class="brand-mark">LB</span>
-        <span class="brand-text">LocalBooster</span>
+        <span class="brand-text">localbooster</span>
       </a>
 
       <nav class="nav">
@@ -888,7 +898,7 @@
       <div class="hero-top">
         <div class="container">
           <p class="hero-kicker">Local Marketing Agency</p>
-          <h1 class="hero-title">LocalBooster</h1>
+          <h1 class="hero-title">localbooster</h1>
         </div>
       </div>
 
@@ -897,7 +907,7 @@
           <div class="hero-space"></div>
 
           <div class="hero-copy">
-            <h2>LocalBooster</h2>
+            <h2>localbooster</h2>
             <p class="ko">로컬부스터</p>
 
             <ul>
@@ -926,7 +936,7 @@
           <p class="section-desc">
             광고만 집행한다고 문의가 늘지 않습니다. 상권, 키워드, 플레이스 구조,
             리뷰 흐름, 콘텐츠 방향이 맞아야 검색과 문의가 연결됩니다.
-            LocalBooster는 로컬 비즈니스에 필요한 이 구조를 정리하고 실행합니다.
+            localbooster는 로컬 비즈니스에 필요한 이 구조를 정리하고 실행합니다.
           </p>
         </div>
 
@@ -956,11 +966,12 @@
         <div class="services-head">
           <span class="eyebrow">Services</span>
           <h2 class="section-title">
-            로컬 비즈니스에 필요한 핵심만<br />
-            더 전략적으로 설계합니다.
+            로컬 비즈니스를 위한 전략을<br />
+            더 선명하고 고급스럽게 설계합니다.
           </h2>
           <p class="section-desc">
-            단순 실행 대행이 아니라, 검색 노출부터 문의 전환까지 이어지는 구조를 설계합니다.
+            단순 실행 대행이 아니라, 노출 구조와 리뷰 흐름, 전환 메시지까지
+            하나의 마케팅 시스템으로 정리합니다.
           </p>
 
           <div class="services-topline">
@@ -1066,7 +1077,7 @@
         </div>
 
         <div class="services-note">
-          매장마다 필요한 우선순위는 다릅니다. LocalBooster는 무조건 많은 상품을 권하지 않고,
+          매장마다 필요한 우선순위는 다릅니다. localbooster는 무조건 많은 상품을 권하지 않고,
           현재 상태를 본 뒤 실제로 필요한 범위만 제안합니다.
         </div>
       </div>
@@ -1193,7 +1204,7 @@
 
           <form action="https://formsubmit.co/prhotple@naver.com" method="POST">
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="LocalBooster 홈페이지 상담 문의" />
+            <input type="hidden" name="_subject" value="localbooster 홈페이지 상담 문의" />
             <input type="hidden" name="_template" value="table" />
             <input
               type="hidden"
@@ -1267,7 +1278,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>© 2026 LocalBooster. All rights reserved.</div>
+      <div>© 2026 localbooster. All rights reserved.</div>
       <div>로컬 비즈니스 마케팅 · 플레이스 · 리뷰 · 랜딩 · 브랜딩</div>
     </div>
   </footer>
