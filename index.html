@@ -17,14 +17,14 @@
       --blue-dark: #0d4fb8;
       --text: #111111;
       --muted: #667085;
-      --line: #e8edf5;
+      --line: #e7edf5;
       --bg: #f6f8fc;
       --white: #ffffff;
-      --shadow: 0 16px 40px rgba(17, 17, 17, 0.08);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
+      --max: 1180px;
+      --shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
       --radius-md: 16px;
-      --max: 1160px;
     }
 
     * {
@@ -44,14 +44,14 @@
       word-break: keep-all;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -60,7 +60,7 @@
     }
 
     .section {
-      padding: 72px 0;
+      padding: 76px 0;
     }
 
     .eyebrow {
@@ -68,16 +68,16 @@
       margin-bottom: 14px;
       font-size: 13px;
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--blue);
     }
 
     .section-title {
       margin: 0 0 14px;
-      font-size: clamp(30px, 7vw, 58px);
+      font-size: clamp(30px, 7vw, 64px);
       line-height: 1.08;
-      letter-spacing: -0.045em;
+      letter-spacing: -0.05em;
     }
 
     .section-desc {
@@ -90,12 +90,12 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
+      min-height: 54px;
+      padding: 0 24px;
       border-radius: 999px;
+      border: 1px solid transparent;
       font-size: 15px;
       font-weight: 800;
-      border: 1px solid transparent;
       cursor: pointer;
       transition: 0.2s ease;
       white-space: nowrap;
@@ -104,7 +104,7 @@
     .btn-primary {
       background: var(--blue);
       color: var(--white);
-      box-shadow: 0 12px 28px rgba(21, 96, 216, 0.25);
+      box-shadow: 0 12px 28px rgba(21, 96, 216, 0.24);
     }
 
     .btn-primary:hover {
@@ -115,7 +115,7 @@
     .btn-secondary {
       background: rgba(21, 96, 216, 0.06);
       color: var(--blue);
-      border-color: rgba(21, 96, 216, 0.14);
+      border-color: rgba(21, 96, 216, 0.12);
     }
 
     .btn-secondary:hover {
@@ -132,11 +132,11 @@
     }
 
     .topbar-inner {
-      min-height: 66px;
+      min-height: 68px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 16px;
     }
 
     .brand {
@@ -147,8 +147,8 @@
     }
 
     .brand-mark {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 12px;
       background: var(--blue);
       color: var(--white);
@@ -186,7 +186,7 @@
     }
 
     .hero-top .container {
-      padding: 68px 0 60px;
+      padding: 72px 0 62px;
     }
 
     .hero-kicker {
@@ -199,8 +199,8 @@
 
     .hero-title {
       margin: 0;
-      font-size: clamp(44px, 14vw, 112px);
-      line-height: 0.95;
+      font-size: clamp(46px, 14vw, 122px);
+      line-height: 0.92;
       letter-spacing: -0.07em;
       font-weight: 900;
       text-transform: lowercase;
@@ -214,9 +214,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 0;
-      align-items: center;
-      min-height: auto;
-      padding: 40px 0 48px;
+      padding: 40px 0 52px;
     }
 
     .hero-copy {
@@ -227,7 +225,7 @@
 
     .hero-copy h2 {
       margin: 0 0 6px;
-      font-size: clamp(34px, 10vw, 70px);
+      font-size: clamp(34px, 10vw, 74px);
       line-height: 0.96;
       letter-spacing: -0.05em;
       color: var(--blue);
@@ -236,7 +234,7 @@
 
     .hero-copy .ko {
       margin: 0 0 18px;
-      font-size: clamp(22px, 6vw, 34px);
+      font-size: clamp(22px, 6vw, 36px);
       font-weight: 900;
       letter-spacing: -0.04em;
       color: var(--blue);
@@ -244,12 +242,12 @@
 
     .hero-copy ul {
       list-style: none;
-      padding: 0;
       margin: 0 0 24px;
+      padding: 0;
     }
 
     .hero-copy li {
-      font-size: clamp(17px, 4.7vw, 24px);
+      font-size: clamp(17px, 4.6vw, 27px);
       line-height: 1.75;
       color: var(--blue);
       letter-spacing: -0.03em;
@@ -266,13 +264,16 @@
       width: 100%;
     }
 
-    .grid-2 {
+    .split-grid,
+    .contact-grid,
+    .process-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 24px;
     }
 
-    .card-box {
+    .box,
+    .contact-form-wrap {
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius-xl);
@@ -281,8 +282,8 @@
     }
 
     .problem-list,
-    .contact-points,
-    .steps {
+    .steps,
+    .contact-points {
       display: grid;
       gap: 14px;
     }
@@ -298,7 +299,7 @@
     .problem-item strong,
     .contact-point strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       font-size: 16px;
       letter-spacing: -0.02em;
     }
@@ -308,8 +309,8 @@
     }
 
     .services-head {
-      margin-bottom: 28px;
       max-width: 760px;
+      margin-bottom: 28px;
     }
 
     .cards {
@@ -327,8 +328,8 @@
     }
 
     .card-icon {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 16px;
       background: rgba(21, 96, 216, 0.08);
       color: var(--blue);
@@ -349,14 +350,14 @@
 
     .card p {
       margin: 0 0 16px;
-      color: var(--muted);
       font-size: 15px;
+      color: var(--muted);
     }
 
     .card ul {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
       display: grid;
       gap: 8px;
       font-size: 14px;
@@ -375,7 +376,7 @@
       gap: 14px;
       align-items: start;
       padding: 18px;
-      border-radius: 22px;
+      border-radius: var(--radius-lg);
       background: var(--white);
       border: 1px solid var(--line);
       box-shadow: 0 10px 28px rgba(17, 17, 17, 0.04);
@@ -407,7 +408,7 @@
     }
 
     .cta-wrap {
-      padding: 0 0 72px;
+      padding: 0 0 76px;
     }
 
     .cta-band {
@@ -420,7 +421,7 @@
 
     .cta-band h3 {
       margin: 0 0 10px;
-      font-size: clamp(28px, 7vw, 48px);
+      font-size: clamp(28px, 7vw, 50px);
       line-height: 1.08;
       letter-spacing: -0.04em;
     }
@@ -465,19 +466,19 @@
     select,
     textarea {
       width: 100%;
-      border: 1px solid #dbe2eb;
-      border-radius: var(--radius-md);
       min-height: 50px;
       padding: 13px 14px;
-      font: inherit;
-      color: var(--text);
+      border: 1px solid #dbe2eb;
+      border-radius: var(--radius-md);
       background: #fff;
+      color: var(--text);
+      font: inherit;
       outline: none;
       transition: 0.2s ease;
     }
 
     textarea {
-      min-height: 130px;
+      min-height: 132px;
       resize: vertical;
     }
 
@@ -518,11 +519,7 @@
       }
 
       .section {
-        padding: 92px 0;
-      }
-
-      .topbar-inner {
-        min-height: 74px;
+        padding: 96px 0;
       }
 
       .hero-top .container {
@@ -530,7 +527,7 @@
       }
 
       .hero-grid {
-        padding: 56px 0 68px;
+        padding: 56px 0 70px;
       }
 
       .hero-actions {
@@ -542,10 +539,9 @@
         width: auto;
       }
 
-      .grid-2,
-      .problem-grid,
-      .process-grid,
-      .contact-grid {
+      .split-grid,
+      .contact-grid,
+      .process-grid {
         grid-template-columns: 1fr 1fr;
         gap: 34px;
       }
@@ -574,6 +570,10 @@
     }
 
     @media (min-width: 1100px) {
+      .topbar-inner {
+        min-height: 74px;
+      }
+
       .nav {
         display: flex;
         align-items: center;
@@ -608,6 +608,12 @@
 
       .cards {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .box,
+      .contact-form-wrap,
+      .card {
+        padding: 32px;
       }
 
       .cta-band {
@@ -672,7 +678,7 @@
     </section>
 
     <section class="section" id="about">
-      <div class="container problem-grid">
+      <div class="container split-grid">
         <div>
           <span class="eyebrow">About</span>
           <h2 class="section-title">
@@ -686,7 +692,7 @@
           </p>
         </div>
 
-        <div class="card-box">
+        <div class="box">
           <div class="problem-list">
             <div class="problem-item">
               <strong>플레이스는 있는데 노출이 안 됩니다.</strong>
@@ -845,7 +851,7 @@
 
     <section class="section contact" id="contact">
       <div class="container contact-grid">
-        <div class="card-box">
+        <div class="box">
           <span class="eyebrow">Contact</span>
           <h2 class="section-title">
             문의는 간단하게.<br />
@@ -871,7 +877,7 @@
           </div>
         </div>
 
-        <div class="card-box">
+        <div class="contact-form-wrap">
           <form action="https://formsubmit.co/prhotple@naver.com" method="POST">
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="localbooster 홈페이지 상담 문의" />
