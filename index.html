@@ -17,6 +17,7 @@
       --blue-dark: #0f49d8;
       --blue-deep: #0b2f86;
       --blue-soft: #eef4ff;
+      --blue-soft-2: #dce8ff;
       --sky-soft: #f7faff;
       --navy: #101828;
       --text: #1d2939;
@@ -24,7 +25,6 @@
       --line: #e4e7ec;
       --bg: #f8fafc;
       --white: #ffffff;
-      --accent: #dbe8ff;
       --shadow-sm: 0 8px 20px rgba(16, 24, 40, 0.05);
       --shadow-md: 0 18px 45px rgba(16, 24, 40, 0.08);
       --shadow-lg: 0 28px 70px rgba(16, 24, 40, 0.12);
@@ -57,11 +57,6 @@
       text-decoration: none;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
     button,
     input,
     select,
@@ -75,7 +70,7 @@
     }
 
     .section {
-      padding: 82px 0;
+      padding: 84px 0;
     }
 
     .eyebrow {
@@ -195,14 +190,14 @@
       display: none;
     }
 
-    /* Hero - 이전 버전 느낌 유지 */
+    /* HERO */
     .hero {
       position: relative;
       overflow: hidden;
       padding: 0;
       background:
-        radial-gradient(circle at 12% 14%, rgba(255,255,255,0.14) 0, rgba(255,255,255,0) 24%),
-        radial-gradient(circle at 86% 18%, rgba(255,255,255,0.1) 0, rgba(255,255,255,0) 26%),
+        radial-gradient(circle at 14% 14%, rgba(255,255,255,0.16) 0, rgba(255,255,255,0) 24%),
+        radial-gradient(circle at 86% 16%, rgba(255,255,255,0.12) 0, rgba(255,255,255,0) 24%),
         linear-gradient(135deg, #0f49d8 0%, #155eef 48%, #0b2f86 100%);
       color: var(--white);
     }
@@ -210,10 +205,10 @@
     .hero::before {
       content: "";
       position: absolute;
-      right: -90px;
       top: -90px;
-      width: 240px;
-      height: 240px;
+      right: -90px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       background: rgba(255,255,255,0.08);
     }
@@ -223,8 +218,8 @@
       position: absolute;
       left: -120px;
       bottom: -120px;
-      width: 320px;
-      height: 320px;
+      width: 300px;
+      height: 300px;
       border-radius: 50%;
       background: rgba(255,255,255,0.06);
     }
@@ -234,8 +229,8 @@
       z-index: 1;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 26px;
-      padding: 54px 0 66px;
+      gap: 20px;
+      padding: 56px 0 72px;
     }
 
     .hero-copy {
@@ -246,7 +241,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       padding: 8px 14px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.12);
@@ -257,18 +252,18 @@
     }
 
     .hero-title {
-      margin: 0 0 18px;
-      font-size: clamp(46px, 14vw, 118px);
-      line-height: 0.93;
+      margin: 0;
+      font-size: clamp(46px, 14vw, 112px);
+      line-height: 0.92;
       letter-spacing: -0.08em;
       font-weight: 900;
       text-transform: lowercase;
     }
 
     .hero-sub {
-      margin: 0;
+      margin: 20px 0 0;
       max-width: 680px;
-      font-size: clamp(17px, 4.4vw, 22px);
+      font-size: clamp(17px, 4.3vw, 21px);
       line-height: 1.72;
       color: rgba(255,255,255,0.88);
     }
@@ -277,79 +272,94 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 12px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .hero-actions .btn {
       width: 100%;
     }
 
-    .hero-bottom {
+    .hero-cards {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
+      gap: 14px;
+      margin-top: 6px;
     }
 
-    .hero-panel,
-    .hero-list {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 28px;
-      box-shadow: 0 18px 46px rgba(7, 18, 42, 0.16);
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 18px;
+      box-shadow: 0 18px 46px rgba(7, 18, 42, 0.14);
       backdrop-filter: blur(12px);
     }
 
-    .hero-panel {
-      padding: 24px;
+    .hero-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 10px;
     }
 
-    .hero-panel h2 {
-      margin: 0 0 8px;
-      font-size: clamp(34px, 8vw, 68px);
+    .hero-card-badge {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-card h2 {
+      margin: 0 0 6px;
+      font-size: clamp(34px, 8vw, 64px);
       line-height: 0.95;
       letter-spacing: -0.06em;
       text-transform: lowercase;
     }
 
-    .hero-panel .ko {
-      margin: 0 0 18px;
-      font-size: clamp(22px, 5vw, 34px);
+    .hero-card .ko {
+      margin: 0 0 16px;
+      font-size: clamp(22px, 5vw, 32px);
       font-weight: 800;
       letter-spacing: -0.04em;
     }
 
-    .hero-panel p {
+    .hero-card p {
       margin: 0;
       color: rgba(255,255,255,0.84);
       font-size: 15px;
     }
 
     .hero-list {
-      padding: 18px;
       display: grid;
       gap: 12px;
     }
 
     .hero-item {
       display: grid;
-      grid-template-columns: 44px 1fr;
+      grid-template-columns: 42px 1fr;
       gap: 12px;
       align-items: start;
       padding: 14px;
       border-radius: 20px;
       background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .hero-badge {
-      width: 44px;
-      height: 44px;
+    .hero-no {
+      width: 42px;
+      height: 42px;
       border-radius: 14px;
       background: rgba(255,255,255,0.12);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
       font-size: 14px;
+      font-weight: 900;
     }
 
     .hero-item strong {
@@ -403,7 +413,7 @@
       width: 46px;
       height: 46px;
       border-radius: 16px;
-      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--blue-soft-2) 100%);
       color: var(--blue);
       display: inline-flex;
       align-items: center;
@@ -501,7 +511,7 @@
       width: 58px;
       height: 58px;
       border-radius: 18px;
-      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--blue-soft-2) 100%);
       color: var(--blue);
       display: inline-flex;
       align-items: center;
@@ -753,7 +763,7 @@
       width: 46px;
       height: 46px;
       border-radius: 16px;
-      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--blue-soft-2) 100%);
       color: var(--blue);
       display: inline-flex;
       align-items: center;
@@ -776,30 +786,53 @@
       color: var(--muted);
     }
 
+    /* 신청서: 파란색 + 흰글자 버전 유지, 입력칸 흰색 */
     .contact-form-wrap {
       position: relative;
-      background: linear-gradient(135deg, #f8fbff 0%, #edf4ff 100%);
-      border: 1px solid rgba(21,94,239,0.1);
+      overflow: hidden;
       border-radius: 32px;
-      padding: 24px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.08) 100%);
       box-shadow: var(--shadow-lg);
     }
 
-    .contact-form-wrap::before {
+    .contact-form-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 31px;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255,255,255,0.12) 0, rgba(255,255,255,0) 26%),
+        radial-gradient(circle at 88% 18%, rgba(255,255,255,0.08) 0, rgba(255,255,255,0) 28%),
+        linear-gradient(165deg, #0f49d8 0%, #155eef 48%, #102a72 100%);
+      color: var(--white);
+    }
+
+    .contact-form-shell::before {
       content: "";
       position: absolute;
-      right: 20px;
-      top: 20px;
-      width: 100px;
-      height: 100px;
+      right: -90px;
+      top: -90px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
-      background: rgba(21, 94, 239, 0.08);
-      filter: blur(2px);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .contact-form-shell::after {
+      content: "";
+      position: absolute;
+      left: -120px;
+      bottom: -120px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
     }
 
     .contact-form-inner {
       position: relative;
       z-index: 1;
+      padding: 24px;
     }
 
     .form-top {
@@ -813,8 +846,8 @@
       margin-bottom: 14px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(21,94,239,0.08);
-      color: var(--blue);
+      background: rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.92);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -826,13 +859,13 @@
       font-size: 28px;
       line-height: 1.08;
       letter-spacing: -0.045em;
-      color: var(--navy);
+      color: var(--white);
     }
 
     .form-top p {
       margin: 0;
       font-size: 14px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.8);
     }
 
     .form-meta {
@@ -849,34 +882,34 @@
       align-items: start;
       padding: 12px 14px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(21,94,239,0.1);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .form-meta-icon {
       width: 40px;
       height: 40px;
       border-radius: 13px;
-      background: linear-gradient(135deg, var(--blue-soft) 0%, var(--accent) 100%);
+      background: rgba(255,255,255,0.12);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-weight: 900;
       font-size: 14px;
-      color: var(--blue);
+      color: var(--white);
     }
 
     .form-meta-item strong {
       display: block;
       margin-bottom: 2px;
       font-size: 14px;
-      color: var(--navy);
+      color: var(--white);
     }
 
     .form-meta-item span {
       display: block;
       font-size: 12px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.72);
     }
 
     form {
@@ -895,7 +928,7 @@
       gap: 8px;
       font-size: 13px;
       font-weight: 800;
-      color: var(--navy);
+      color: rgba(255,255,255,0.94);
       letter-spacing: -0.01em;
     }
 
@@ -909,7 +942,7 @@
       width: 100%;
       min-height: 56px;
       padding: 15px 16px;
-      border: 1px solid #dbe3ee;
+      border: 1px solid rgba(255,255,255,0.22);
       border-radius: 16px;
       background: var(--white);
       color: var(--text);
@@ -940,27 +973,27 @@
     input:focus,
     select:focus,
     textarea:focus {
-      border-color: rgba(21, 94, 239, 0.5);
-      box-shadow: 0 0 0 4px rgba(21, 94, 239, 0.08);
+      border-color: rgba(21, 94, 239, 0.4);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.18);
     }
 
     .form-note {
       margin: -2px 0 0;
       font-size: 12px;
-      color: var(--muted);
+      color: rgba(255,255,255,0.74);
     }
 
     .submit-btn {
       width: 100%;
       min-height: 58px;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
-      color: var(--white);
-      box-shadow: 0 14px 30px rgba(21, 94, 239, 0.22);
+      background: linear-gradient(135deg, #ffffff 0%, #eef4ff 100%);
+      color: var(--blue-deep);
+      box-shadow: 0 14px 30px rgba(7, 18, 42, 0.16);
     }
 
     .submit-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 18px 34px rgba(21, 94, 239, 0.28);
+      box-shadow: 0 18px 34px rgba(7, 18, 42, 0.22);
     }
 
     .footer {
@@ -987,7 +1020,7 @@
       }
 
       .hero-inner {
-        padding: 76px 0 82px;
+        padding: 76px 0 86px;
       }
 
       .hero-actions {
@@ -999,7 +1032,7 @@
         width: auto;
       }
 
-      .hero-bottom,
+      .hero-cards,
       .grid-2,
       .contact-grid,
       .process-grid {
@@ -1055,9 +1088,8 @@
         gap: 12px;
       }
 
-      .hero-inner {
-        grid-template-columns: 1.08fr 0.92fr;
-        gap: 48px;
+      .hero-cards {
+        grid-template-columns: 1.02fr 0.98fr;
       }
 
       .services-grid {
@@ -1065,8 +1097,11 @@
       }
 
       .box,
-      .contact-panel,
-      .contact-form-wrap {
+      .contact-panel {
+        padding: 32px;
+      }
+
+      .contact-form-inner {
         padding: 32px;
       }
 
@@ -1116,8 +1151,11 @@
           </div>
         </div>
 
-        <div class="hero-bottom">
-          <div class="hero-panel">
+        <div class="hero-cards">
+          <div class="hero-card">
+            <div class="hero-card-top">
+              <span class="hero-card-badge">Core Brand</span>
+            </div>
             <h2>localbooster</h2>
             <p class="ko">로컬부스터</p>
             <p>
@@ -1128,7 +1166,7 @@
 
           <div class="hero-list">
             <div class="hero-item">
-              <div class="hero-badge">01</div>
+              <div class="hero-no">01</div>
               <div>
                 <strong>검색 구조 중심</strong>
                 <span>보이는 순서와 흐름부터 다시 설계합니다.</span>
@@ -1136,7 +1174,7 @@
             </div>
 
             <div class="hero-item">
-              <div class="hero-badge">02</div>
+              <div class="hero-no">02</div>
               <div>
                 <strong>전환 중심 랜딩</strong>
                 <span>클릭에서 끝나지 않고 문의로 연결되게 만듭니다.</span>
@@ -1144,7 +1182,7 @@
             </div>
 
             <div class="hero-item">
-              <div class="hero-badge">03</div>
+              <div class="hero-no">03</div>
               <div>
                 <strong>브랜드 인상 정리</strong>
                 <span>처음 봤을 때 전문적으로 느껴지게 만듭니다.</span>
@@ -1408,111 +1446,113 @@
         </div>
 
         <div class="contact-form-wrap">
-          <div class="contact-form-inner">
-            <div class="form-top">
-              <div class="eyebrow-dark">Application Form</div>
-              <h3>상담 신청서</h3>
-              <p>지금 남겨주시면 매장 상황을 보고 방향부터 정리해드립니다.</p>
+          <div class="contact-form-shell">
+            <div class="contact-form-inner">
+              <div class="form-top">
+                <div class="eyebrow-dark">Application Form</div>
+                <h3>상담 신청서</h3>
+                <p>지금 남겨주시면 매장 상황을 보고 방향부터 정리해드립니다.</p>
+              </div>
+
+              <div class="form-meta">
+                <div class="form-meta-item">
+                  <div class="form-meta-icon">01</div>
+                  <div>
+                    <strong>맞춤 검토</strong>
+                    <span>업종 · 지역 · 현재 상태 기준</span>
+                  </div>
+                </div>
+
+                <div class="form-meta-item">
+                  <div class="form-meta-icon">02</div>
+                  <div>
+                    <strong>간단 신청</strong>
+                    <span>핵심 정보만 입력하면 됩니다</span>
+                  </div>
+                </div>
+              </div>
+
+              <form action="https://formsubmit.co/prhotple@naver.com" method="POST">
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_subject" value="localbooster 홈페이지 상담 문의" />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://prhotple.github.io/localbooster/thanks.html"
+                />
+
+                <div class="form-grid">
+                  <label>
+                    업체명
+                    <div class="field">
+                      <input type="text" name="업체명" placeholder="예: 업체명 입력" required />
+                    </div>
+                  </label>
+
+                  <label>
+                    업종
+                    <div class="field">
+                      <input type="text" name="업종" placeholder="예: 고깃집, 카페, 병원" required />
+                    </div>
+                  </label>
+                </div>
+
+                <div class="form-grid">
+                  <label>
+                    지역
+                    <div class="field">
+                      <input type="text" name="지역" placeholder="예: 대구 달서구" required />
+                    </div>
+                  </label>
+
+                  <label>
+                    연락처
+                    <div class="field">
+                      <input type="tel" name="연락처" placeholder="예: 010-1234-5678" required />
+                    </div>
+                  </label>
+                </div>
+
+                <div class="form-grid">
+                  <label>
+                    현재 광고 여부
+                    <div class="field">
+                      <select name="현재 광고 여부" required>
+                        <option value="">선택해주세요</option>
+                        <option>진행 중</option>
+                        <option>이전 진행 경험 있음</option>
+                        <option>진행한 적 없음</option>
+                      </select>
+                    </div>
+                  </label>
+
+                  <label>
+                    플레이스 링크
+                    <div class="field">
+                      <input type="url" name="플레이스 링크" placeholder="네이버 플레이스 링크 입력" />
+                    </div>
+                  </label>
+                </div>
+
+                <label>
+                  문의 내용
+                  <div class="field">
+                    <textarea
+                      name="문의 내용"
+                      placeholder="현재 고민이나 원하는 방향을 적어주세요. 예: 플레이스 노출이 약하고, 광고 랜딩페이지도 필요합니다."
+                      required
+                    ></textarea>
+                  </div>
+                </label>
+
+                <p class="form-note">
+                  처음 1회는 FormSubmit 승인 메일을 확인해야 정상 수신될 수 있습니다.
+                </p>
+
+                <button type="submit" class="btn submit-btn">상담 신청 보내기</button>
+              </form>
             </div>
-
-            <div class="form-meta">
-              <div class="form-meta-item">
-                <div class="form-meta-icon">01</div>
-                <div>
-                  <strong>맞춤 검토</strong>
-                  <span>업종 · 지역 · 현재 상태 기준</span>
-                </div>
-              </div>
-
-              <div class="form-meta-item">
-                <div class="form-meta-icon">02</div>
-                <div>
-                  <strong>간단 신청</strong>
-                  <span>핵심 정보만 입력하면 됩니다</span>
-                </div>
-              </div>
-            </div>
-
-            <form action="https://formsubmit.co/prhotple@naver.com" method="POST">
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="localbooster 홈페이지 상담 문의" />
-              <input type="hidden" name="_template" value="table" />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://prhotple.github.io/localbooster/thanks.html"
-              />
-
-              <div class="form-grid">
-                <label>
-                  업체명
-                  <div class="field">
-                    <input type="text" name="업체명" placeholder="예: 업체명 입력" required />
-                  </div>
-                </label>
-
-                <label>
-                  업종
-                  <div class="field">
-                    <input type="text" name="업종" placeholder="예: 고깃집, 카페, 병원" required />
-                  </div>
-                </label>
-              </div>
-
-              <div class="form-grid">
-                <label>
-                  지역
-                  <div class="field">
-                    <input type="text" name="지역" placeholder="예: 대구 달서구" required />
-                  </div>
-                </label>
-
-                <label>
-                  연락처
-                  <div class="field">
-                    <input type="tel" name="연락처" placeholder="예: 010-1234-5678" required />
-                  </div>
-                </label>
-              </div>
-
-              <div class="form-grid">
-                <label>
-                  현재 광고 여부
-                  <div class="field">
-                    <select name="현재 광고 여부" required>
-                      <option value="">선택해주세요</option>
-                      <option>진행 중</option>
-                      <option>이전 진행 경험 있음</option>
-                      <option>진행한 적 없음</option>
-                    </select>
-                  </div>
-                </label>
-
-                <label>
-                  플레이스 링크
-                  <div class="field">
-                    <input type="url" name="플레이스 링크" placeholder="네이버 플레이스 링크 입력" />
-                  </div>
-                </label>
-              </div>
-
-              <label>
-                문의 내용
-                <div class="field">
-                  <textarea
-                    name="문의 내용"
-                    placeholder="현재 고민이나 원하는 방향을 적어주세요. 예: 플레이스 노출이 약하고, 광고 랜딩페이지도 필요합니다."
-                    required
-                  ></textarea>
-                </div>
-              </label>
-
-              <p class="form-note">
-                처음 1회는 FormSubmit 승인 메일을 확인해야 정상 수신될 수 있습니다.
-              </p>
-
-              <button type="submit" class="btn submit-btn">상담 신청 보내기</button>
-            </form>
           </div>
         </div>
       </div>
