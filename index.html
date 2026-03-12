@@ -11,6 +11,7 @@
     name="description"
     content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
   />
+  <meta name="format-detection" content="telephone=no" />
 
   <!-- Google Tag Manager -->
   <script>
@@ -153,6 +154,12 @@
       background: rgba(43, 127, 255, 0.06);
       color: var(--blue);
       border-color: rgba(43, 127, 255, 0.12);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
     }
 
     .topbar {
@@ -784,6 +791,42 @@
       color: var(--muted);
     }
 
+    .consent-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 2px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: #f8fbff;
+      border: 1px solid rgba(43, 127, 255, 0.08);
+    }
+
+    .consent-wrap input[type="checkbox"] {
+      width: 18px;
+      min-height: 18px;
+      height: 18px;
+      margin: 3px 0 0;
+      padding: 0;
+      flex: 0 0 auto;
+    }
+
+    .consent-text {
+      font-size: 13px;
+      color: #475467;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    .hidden-field {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
     .form-actions {
       display: flex;
       flex-direction: column;
@@ -1320,65 +1363,78 @@
             <p>아래 정보를 남겨주시면 검토 후 순차적으로 연락드립니다.</p>
           </div>
 
-          <form id="consulting-form" data-track-form="consulting_form">
-            <input type="hidden" id="utm_source" />
-            <input type="hidden" id="utm_medium" />
-            <input type="hidden" id="utm_campaign" />
-            <input type="hidden" id="utm_term" />
-            <input type="hidden" id="utm_content" />
-            <input type="hidden" id="first_referrer" />
-            <input type="hidden" id="landing_page" />
-            <input type="hidden" id="device_type" />
+          <form id="consulting-form" data-track-form="consulting_form" novalidate>
+            <input type="hidden" id="utm_source" name="utm_source" />
+            <input type="hidden" id="utm_medium" name="utm_medium" />
+            <input type="hidden" id="utm_campaign" name="utm_campaign" />
+            <input type="hidden" id="utm_term" name="utm_term" />
+            <input type="hidden" id="utm_content" name="utm_content" />
+            <input type="hidden" id="first_referrer" name="first_referrer" />
+            <input type="hidden" id="landing_page" name="landing_page" />
+            <input type="hidden" id="device_type" name="device_type" />
+
+            <div class="hidden-field" aria-hidden="true">
+              <label for="website">웹사이트</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
 
             <div class="form-grid">
-              <label>
+              <label for="companyName">
                 업체명
-                <input type="text" id="companyName" placeholder="예: 업체명 입력" required />
+                <input type="text" id="companyName" name="companyName" placeholder="예: 업체명 입력" required autocomplete="organization" />
               </label>
 
-              <label>
+              <label for="businessType">
                 업종
-                <input type="text" id="businessType" placeholder="예: 고깃집, 카페, 병원" required />
+                <input type="text" id="businessType" name="businessType" placeholder="예: 고깃집, 카페, 병원" required autocomplete="off" />
               </label>
             </div>
 
             <div class="form-grid">
-              <label>
+              <label for="region">
                 지역
-                <input type="text" id="region" placeholder="예: 대구 달서구" required />
+                <input type="text" id="region" name="region" placeholder="예: 대구 달서구" required autocomplete="address-level2" />
               </label>
 
-              <label>
+              <label for="phone">
                 연락처
-                <input type="tel" id="phone" placeholder="예: 010-1234-5678" required />
+                <input type="tel" id="phone" name="phone" placeholder="예: 010-1234-5678" required inputmode="tel" autocomplete="tel" />
               </label>
             </div>
 
             <div class="form-grid">
-              <label>
+              <label for="adStatus">
                 현재 광고 여부
-                <select id="adStatus" required>
+                <select id="adStatus" name="adStatus" required>
                   <option value="">선택해주세요</option>
-                  <option>진행 중</option>
-                  <option>이전 진행 경험 있음</option>
-                  <option>진행한 적 없음</option>
+                  <option value="진행 중">진행 중</option>
+                  <option value="이전 진행 경험 있음">이전 진행 경험 있음</option>
+                  <option value="진행한 적 없음">진행한 적 없음</option>
                 </select>
               </label>
 
-              <label>
+              <label for="placeLink">
                 플레이스 링크
-                <input type="url" id="placeLink" placeholder="네이버 플레이스 링크 입력" />
+                <input type="url" id="placeLink" name="placeLink" placeholder="네이버 플레이스 링크 입력" autocomplete="url" />
               </label>
             </div>
 
-            <label>
+            <label for="message">
               문의 내용
               <textarea
                 id="message"
+                name="message"
                 placeholder="현재 고민이나 원하는 방향을 적어주세요. 예: 플레이스 노출이 약하고, 체험단과 광고 운영도 필요합니다."
                 required
               ></textarea>
             </label>
+
+            <div class="consent-wrap">
+              <input type="checkbox" id="privacyConsent" name="privacyConsent" required />
+              <label for="privacyConsent" class="consent-text">
+                상담 진행을 위한 개인정보 수집·이용에 동의합니다.
+              </label>
+            </div>
 
             <p class="form-note">
               제출 데이터는 내부 확인용 Google Sheets에 자동 저장됩니다.
@@ -1393,7 +1449,7 @@
                 data-track-category="form"
               >상담 신청 보내기</button>
               <div class="submit-sub">업종 · 상권 · 현재 상태 기준으로 검토 후 연락드립니다.</div>
-              <div id="submitStatus" class="submit-status"></div>
+              <div id="submitStatus" class="submit-status" role="status" aria-live="polite"></div>
             </div>
           </form>
         </div>
@@ -1428,21 +1484,38 @@
       try { return localStorage.getItem(key); } catch (e) { return null; }
     }
 
-    (function initAttribution() {
-      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-      utmKeys.forEach(function(key) {
-        const value = getQueryParam(key);
-        if (value) safeStorageSet(key, value);
-      });
+    function safeTrim(value) {
+      return String(value || '').trim();
+    }
 
-      if (!safeStorageGet('first_referrer')) {
-        safeStorageSet('first_referrer', document.referrer || 'direct');
+    function formatPhone(value) {
+      return safeTrim(value).replace(/[^\d-]/g, '');
+    }
+
+    function isValidUrl(value) {
+      const text = safeTrim(value);
+      if (!text) return true;
+      try {
+        const url = new URL(text);
+        return url.protocol === 'http:' || url.protocol === 'https:';
+      } catch (e) {
+        return false;
       }
+    }
 
-      safeStorageSet('landing_page', window.location.href);
-    })();
+    function setStatus(type, message) {
+      const submitStatus = document.getElementById('submitStatus');
+      submitStatus.className = 'submit-status ' + type;
+      submitStatus.textContent = message;
+    }
 
-    (function fillHiddenFields() {
+    function clearStatus() {
+      const submitStatus = document.getElementById('submitStatus');
+      submitStatus.className = 'submit-status';
+      submitStatus.textContent = '';
+    }
+
+    function refillHiddenFields() {
       const mapping = [
         'utm_source',
         'utm_medium',
@@ -1460,10 +1533,27 @@
 
       const deviceInput = document.getElementById('device_type');
       if (deviceInput) deviceInput.value = getDeviceType();
+    }
+
+    (function initAttribution() {
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+      utmKeys.forEach(function(key) {
+        const value = getQueryParam(key);
+        if (value) safeStorageSet(key, value);
+      });
+
+      if (!safeStorageGet('first_referrer')) {
+        safeStorageSet('first_referrer', document.referrer || 'direct');
+      }
+
+      safeStorageSet('landing_page', window.location.href);
     })();
 
+    refillHiddenFields();
+
     function pushTrackingEvent(eventName, payload) {
-      const eventPayload = Object.assign({
+      const basePayload = {
         event: eventName,
         page_location: window.location.href,
         page_path: window.location.pathname,
@@ -1472,21 +1562,23 @@
         utm_source: safeStorageGet('utm_source') || '',
         utm_medium: safeStorageGet('utm_medium') || '',
         utm_campaign: safeStorageGet('utm_campaign') || ''
-      }, payload || {});
+      };
+
+      const finalPayload = Object.assign(basePayload, payload || {});
 
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(eventPayload);
+      window.dataLayer.push(finalPayload);
 
       if (typeof gtag === 'function') {
-        gtag('event', eventName, payload || {});
+        gtag('event', eventName, finalPayload);
       }
 
-      if (window.clarity) {
+      if (typeof window.clarity === 'function') {
         try {
           if (payload && payload.label) {
-            window.clarity('set', eventName, String(payload.label));
+            window.clarity('event', eventName + '_' + String(payload.label));
           } else {
-            window.clarity('set', eventName, '1');
+            window.clarity('event', eventName);
           }
         } catch (e) {}
       }
@@ -1526,7 +1618,7 @@
 
       const label = target.getAttribute('data-track-click');
       const category = target.getAttribute('data-track-category') || 'click';
-      const text = (target.textContent || '').trim();
+      const text = safeTrim(target.textContent);
 
       pushTrackingEvent('button_click', {
         category: category,
@@ -1566,29 +1658,19 @@
     })();
 
     (function initTimeTracking() {
-      const start = Date.now();
-      let fired30 = false;
-      let fired60 = false;
+      window.setTimeout(function() {
+        pushTrackingEvent('engaged_30s', {
+          category: 'engagement',
+          label: '30_seconds'
+        });
+      }, 30000);
 
-      setInterval(function() {
-        const seconds = Math.floor((Date.now() - start) / 1000);
-
-        if (seconds >= 30 && !fired30) {
-          fired30 = true;
-          pushTrackingEvent('engaged_30s', {
-            category: 'engagement',
-            label: '30_seconds'
-          });
-        }
-
-        if (seconds >= 60 && !fired60) {
-          fired60 = true;
-          pushTrackingEvent('engaged_60s', {
-            category: 'engagement',
-            label: '60_seconds'
-          });
-        }
-      }, 5000);
+      window.setTimeout(function() {
+        pushTrackingEvent('engaged_60s', {
+          category: 'engagement',
+          label: '60_seconds'
+        });
+      }, 60000);
     })();
 
     async function submitToGoogleSheets(payload) {
@@ -1601,17 +1683,42 @@
         body: JSON.stringify(payload)
       });
 
-      return await response.json();
+      const text = await response.text();
+
+      let result = {};
+      try {
+        result = JSON.parse(text);
+      } catch (e) {
+        result = {
+          success: false,
+          message: 'Invalid JSON response',
+          raw: text
+        };
+      }
+
+      return {
+        ok: response.ok,
+        data: result
+      };
     }
 
     (function initFormTracking() {
       const form = document.getElementById('consulting-form');
       const submitBtn = document.getElementById('submitBtn');
-      const submitStatus = document.getElementById('submitStatus');
+      const companyNameEl = document.getElementById('companyName');
+      const businessTypeEl = document.getElementById('businessType');
+      const regionEl = document.getElementById('region');
+      const phoneEl = document.getElementById('phone');
+      const adStatusEl = document.getElementById('adStatus');
+      const placeLinkEl = document.getElementById('placeLink');
+      const messageEl = document.getElementById('message');
+      const privacyConsentEl = document.getElementById('privacyConsent');
+      const websiteEl = document.getElementById('website');
 
       if (!form) return;
 
       let started = false;
+      let isSubmitting = false;
 
       form.addEventListener('focusin', function() {
         if (started) return;
@@ -1625,14 +1732,18 @@
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
+        if (isSubmitting) return;
+        clearStatus();
+
         const payload = {
-          companyName: document.getElementById('companyName').value.trim(),
-          businessType: document.getElementById('businessType').value.trim(),
-          region: document.getElementById('region').value.trim(),
-          phone: document.getElementById('phone').value.trim(),
-          adStatus: document.getElementById('adStatus').value,
-          placeLink: document.getElementById('placeLink').value.trim(),
-          message: document.getElementById('message').value.trim(),
+          companyName: safeTrim(companyNameEl.value),
+          businessType: safeTrim(businessTypeEl.value),
+          region: safeTrim(regionEl.value),
+          phone: formatPhone(phoneEl.value),
+          adStatus: safeTrim(adStatusEl.value),
+          placeLink: safeTrim(placeLinkEl.value),
+          message: safeTrim(messageEl.value),
+          privacyConsent: privacyConsentEl.checked ? '동의' : '미동의',
           utm_source: safeStorageGet('utm_source') || '',
           utm_medium: safeStorageGet('utm_medium') || '',
           utm_campaign: safeStorageGet('utm_campaign') || '',
@@ -1640,56 +1751,113 @@
           utm_content: safeStorageGet('utm_content') || '',
           first_referrer: safeStorageGet('first_referrer') || '',
           landing_page: safeStorageGet('landing_page') || window.location.href,
-          device_type: getDeviceType()
+          device_type: getDeviceType(),
+          created_at: new Date().toISOString()
         };
 
-        if (!payload.companyName || !payload.businessType || !payload.region || !payload.phone || !payload.adStatus || !payload.message) {
-          submitStatus.className = 'submit-status is-error';
-          submitStatus.textContent = '필수 항목을 모두 입력해주세요.';
+        if (!payload.companyName) {
+          setStatus('is-error', '업체명을 입력해주세요.');
+          companyNameEl.focus();
           return;
         }
 
+        if (!payload.businessType) {
+          setStatus('is-error', '업종을 입력해주세요.');
+          businessTypeEl.focus();
+          return;
+        }
+
+        if (!payload.region) {
+          setStatus('is-error', '지역을 입력해주세요.');
+          regionEl.focus();
+          return;
+        }
+
+        if (!payload.phone) {
+          setStatus('is-error', '연락처를 입력해주세요.');
+          phoneEl.focus();
+          return;
+        }
+
+        if (!payload.adStatus) {
+          setStatus('is-error', '현재 광고 여부를 선택해주세요.');
+          adStatusEl.focus();
+          return;
+        }
+
+        if (payload.placeLink && !isValidUrl(payload.placeLink)) {
+          setStatus('is-error', '플레이스 링크 형식이 올바르지 않습니다.');
+          placeLinkEl.focus();
+          return;
+        }
+
+        if (!payload.message) {
+          setStatus('is-error', '문의 내용을 입력해주세요.');
+          messageEl.focus();
+          return;
+        }
+
+        if (!privacyConsentEl.checked) {
+          setStatus('is-error', '개인정보 수집·이용 동의가 필요합니다.');
+          privacyConsentEl.focus();
+          return;
+        }
+
+        if (safeTrim(websiteEl.value) !== '') {
+          setStatus('is-success', '상담 신청이 정상 접수되었습니다.');
+          form.reset();
+          refillHiddenFields();
+          return;
+        }
+
+        isSubmitting = true;
         submitBtn.disabled = true;
         submitBtn.textContent = '전송 중...';
-        submitStatus.className = 'submit-status';
-        submitStatus.textContent = '';
 
         try {
-          pushTrackingEvent('generate_lead', {
-            category: 'conversion',
-            label: 'consulting_form_submit'
-          });
-
-          pushTrackingEvent('form_submit', {
+          pushTrackingEvent('form_submit_attempt', {
             category: 'form',
-            label: 'consulting_form_submit'
+            label: 'consulting_form_submit_attempt'
           });
 
-          const result = await submitToGoogleSheets(payload);
+          const response = await submitToGoogleSheets(payload);
+          const result = response.data;
 
-          if (result && result.success) {
+          if (response.ok && result && result.success) {
             fireNaverConversion();
 
-            submitStatus.className = 'submit-status is-success';
-            submitStatus.textContent = '상담 신청이 정상 접수되었습니다.';
-            form.reset();
+            pushTrackingEvent('generate_lead', {
+              category: 'conversion',
+              label: 'consulting_form_submit_success'
+            });
 
-            document.getElementById('utm_source').value = safeStorageGet('utm_source') || '';
-            document.getElementById('utm_medium').value = safeStorageGet('utm_medium') || '';
-            document.getElementById('utm_campaign').value = safeStorageGet('utm_campaign') || '';
-            document.getElementById('utm_term').value = safeStorageGet('utm_term') || '';
-            document.getElementById('utm_content').value = safeStorageGet('utm_content') || '';
-            document.getElementById('first_referrer').value = safeStorageGet('first_referrer') || '';
-            document.getElementById('landing_page').value = safeStorageGet('landing_page') || '';
-            document.getElementById('device_type').value = getDeviceType();
+            pushTrackingEvent('form_submit_success', {
+              category: 'form',
+              label: 'consulting_form_submit_success'
+            });
+
+            if (typeof window.clarity === 'function') {
+              try {
+                window.clarity('event', 'consulting_form_submitted');
+              } catch (e) {}
+            }
+
+            setStatus('is-success', '상담 신청이 정상 접수되었습니다.');
+            form.reset();
+            refillHiddenFields();
           } else {
-            throw new Error((result && result.message) || 'Submit failed');
+            throw new Error((result && (result.message || result.error)) || 'Submit failed');
           }
         } catch (error) {
-          submitStatus.className = 'submit-status is-error';
-          submitStatus.textContent = '전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.';
+          pushTrackingEvent('form_submit_error', {
+            category: 'form',
+            label: 'consulting_form_submit_error'
+          });
+
+          setStatus('is-error', '전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.');
           console.error(error);
         } finally {
+          isSubmitting = false;
           submitBtn.disabled = false;
           submitBtn.textContent = '상담 신청 보내기';
         }
