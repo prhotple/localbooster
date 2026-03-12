@@ -1,293 +1,549 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LocalBooster | 로컬 비즈니스 마케팅</title>
+  <meta
+    name="description"
+    content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
+  />
+  <meta name="format-detection" content="telephone=no" />
 
-<title>LocalBooster | 로컬 비즈니스 마케팅</title>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LocalBooster | 로컬 비즈니스 마케팅" />
+  <meta
+    property="og:description"
+    content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
+  />
 
-<meta name="description"
-content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다.">
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),
+          dl=l!='dataLayer' ? '&l='+l : '';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M2D936WX');
+  </script>
 
-<!-- Google Tag Manager -->
-<script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M2D936WX');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBFQEEV9R0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HBFQEEV9R0');
+  </script>
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HBFQEEV9R0"></script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);
+      t.async=1;
+      t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vueu1c21ee");
+  </script>
 
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-HBFQEEV9R0');
-</script>
+  <style>
+    * { box-sizing: border-box; }
 
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "vueu1c21ee");
-</script>
+    body{
+      margin:0;
+      font-family:Pretendard, "Noto Sans KR", Arial, sans-serif;
+      color:#111;
+      background:#fff;
+      line-height:1.6;
+      word-break:keep-all;
+    }
 
-<style>
+    .container{
+      width:min(1180px, calc(100% - 24px));
+      margin:0 auto;
+    }
 
-body{
-margin:0;
-font-family:Pretendard,Noto Sans KR,Arial;
-color:#111;
-background:#fff;
-line-height:1.6;
-}
+    .hero-top{
+      background:#2b7fff;
+      color:#fff;
+      text-align:center;
+      padding:80px 0;
+    }
 
-.container{
-width:min(1180px,calc(100% - 24px));
-margin:0 auto;
-}
+    .hero-title{
+      font-size:clamp(46px, 14vw, 120px);
+      font-weight:900;
+      margin:0;
+      line-height:1.05;
+    }
 
-.hero-top{
-background:#2b7fff;
-color:white;
-text-align:center;
-padding:80px 0;
-}
+    .hero-sub{
+      margin-top:10px;
+      font-size:18px;
+      opacity:0.92;
+    }
 
-.hero-title{
-font-size:clamp(46px,14vw,120px);
-font-weight:900;
-margin:0;
-}
+    .section{
+      padding:80px 0;
+    }
 
-.hero-sub{
-margin-top:10px;
-font-size:18px;
-opacity:0.9;
-}
+    .section-title{
+      font-size:clamp(30px, 7vw, 60px);
+      font-weight:900;
+      margin:0 0 16px;
+      line-height:1.15;
+    }
 
-.section{
-padding:80px 0;
-}
+    .section-desc{
+      color:#667085;
+      font-size:16px;
+      margin:0;
+    }
 
-.section-title{
-font-size:clamp(30px,7vw,60px);
-font-weight:900;
-margin-bottom:16px;
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      padding:16px 26px;
+      border-radius:999px;
+      font-weight:800;
+      border:none;
+      cursor:pointer;
+      transition:opacity .2s ease, transform .2s ease;
+      font-size:16px;
+    }
 
-.section-desc{
-color:#667085;
-font-size:16px;
-}
+    .btn:hover{
+      opacity:.94;
+    }
 
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:14px 26px;
-border-radius:999px;
-font-weight:800;
-border:none;
-cursor:pointer;
-}
+    .btn:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+    }
 
-.btn-primary{
-background:#2b7fff;
-color:white;
-}
+    .btn-primary{
+      background:#2b7fff;
+      color:#fff;
+    }
 
-.contact-form{
-max-width:600px;
-margin:auto;
-}
+    .contact-form{
+      max-width:680px;
+      margin:auto;
+      display:grid;
+      gap:18px;
+    }
 
-input,select,textarea{
-width:100%;
-padding:12px;
-margin-top:6px;
-border:1px solid #ddd;
-border-radius:8px;
-}
+    .field{
+      display:grid;
+      gap:8px;
+    }
 
-textarea{
-min-height:120px;
-}
+    .field label{
+      font-weight:700;
+      font-size:15px;
+    }
 
-.submit-status{
-display:none;
-margin-top:12px;
-padding:10px;
-border-radius:8px;
-font-weight:700;
-text-align:center;
-}
+    input, select, textarea{
+      width:100%;
+      padding:14px 14px;
+      border:1px solid #d0d5dd;
+      border-radius:12px;
+      font:inherit;
+      background:#fff;
+      color:#111;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
 
-.submit-status.success{
-display:block;
-background:#e8f9ef;
-color:#0b7c3e;
-}
+    input:focus, select:focus, textarea:focus{
+      border-color:#2b7fff;
+      box-shadow:0 0 0 4px rgba(43,127,255,.12);
+    }
 
-.submit-status.error{
-display:block;
-background:#ffeaea;
-color:#c80000;
-}
+    textarea{
+      min-height:140px;
+      resize:vertical;
+    }
 
-</style>
+    .help-text{
+      color:#667085;
+      font-size:13px;
+      margin-top:-2px;
+    }
+
+    .check-wrap{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      font-size:14px;
+      color:#344054;
+    }
+
+    .check-wrap input{
+      width:18px;
+      height:18px;
+      margin-top:3px;
+      flex:0 0 auto;
+    }
+
+    .submit-status{
+      display:none;
+      margin-top:4px;
+      padding:12px 14px;
+      border-radius:12px;
+      font-weight:700;
+      text-align:center;
+      font-size:14px;
+    }
+
+    .submit-status.success{
+      display:block;
+      background:#e8f9ef;
+      color:#0b7c3e;
+      border:1px solid #b7ebc9;
+    }
+
+    .submit-status.error{
+      display:block;
+      background:#fff1f1;
+      color:#c80000;
+      border:1px solid #ffcaca;
+    }
+
+    .contact-note{
+      max-width:680px;
+      margin:14px auto 0;
+      color:#667085;
+      font-size:13px;
+      text-align:center;
+    }
+
+    .hidden-field{
+      position:absolute !important;
+      left:-9999px !important;
+      width:1px !important;
+      height:1px !important;
+      overflow:hidden !important;
+    }
+
+    @media (max-width: 768px){
+      .hero-top{
+        padding:64px 0;
+      }
+
+      .section{
+        padding:56px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- GTM noscript -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-M2D936WX"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    ></iframe>
+  </noscript>
 
-<!-- GTM noscript -->
-<noscript>
-<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2D936WX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
+  <section class="hero-top">
+    <div class="container">
+      <h1 class="hero-title">LocalBooster</h1>
+      <p class="hero-sub">체험단 · 플레이스 · 퍼포먼스 마케팅</p>
+    </div>
+  </section>
 
-<section class="hero-top">
-<div class="container">
-<h1 class="hero-title">LocalBooster</h1>
-<p class="hero-sub">체험단 · 플레이스 · 퍼포먼스 마케팅</p>
-</div>
-</section>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">
+        체험단부터 플레이스,<br />
+        퍼포먼스 마케팅까지 연결합니다.
+      </h2>
 
-<section class="section">
-<div class="container">
+      <p class="section-desc">
+        LocalBooster는 로컬 비즈니스에 맞는 체험단, 플레이스, 퍼포먼스 마케팅을 운영합니다.
+      </p>
+    </div>
+  </section>
 
-<h2 class="section-title">
-체험단부터 플레이스,<br>
-퍼포먼스 마케팅까지 연결합니다.
-</h2>
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">무료 상담 신청</h2>
 
-<p class="section-desc">
-LocalBooster는 로컬 비즈니스에 맞는 체험단,
-플레이스, 퍼포먼스 마케팅을 운영합니다.
-</p>
+      <form id="consulting-form" class="contact-form" novalidate>
+        <div class="field">
+          <label for="companyName">업체명</label>
+          <input id="companyName" name="companyName" type="text" required autocomplete="organization" />
+        </div>
 
-</div>
-</section>
+        <div class="field">
+          <label for="businessType">업종</label>
+          <input id="businessType" name="businessType" type="text" required autocomplete="off" />
+        </div>
 
-<section class="section">
-<div class="container">
+        <div class="field">
+          <label for="region">지역</label>
+          <input id="region" name="region" type="text" required autocomplete="address-level2" />
+        </div>
 
-<h2 class="section-title">무료 상담 신청</h2>
+        <div class="field">
+          <label for="phone">연락처</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            inputmode="tel"
+            autocomplete="tel"
+            placeholder="예: 010-1234-5678"
+          />
+          <div class="help-text">숫자와 하이픈만 입력해도 됩니다.</div>
+        </div>
 
-<form id="consulting-form" class="contact-form">
+        <div class="field">
+          <label for="adStatus">현재 광고 여부</label>
+          <select id="adStatus" name="adStatus" required>
+            <option value="">선택</option>
+            <option value="진행중">진행중</option>
+            <option value="경험있음">경험있음</option>
+            <option value="없음">없음</option>
+          </select>
+        </div>
 
-<label>
-업체명
-<input id="companyName" required>
-</label>
+        <div class="field">
+          <label for="placeLink">플레이스 링크</label>
+          <input
+            id="placeLink"
+            name="placeLink"
+            type="url"
+            placeholder="https://..."
+            autocomplete="url"
+          />
+        </div>
 
-<label>
-업종
-<input id="businessType" required>
-</label>
+        <div class="field">
+          <label for="message">문의내용</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="업체 상황, 원하는 마케팅 방향, 현재 고민 등을 적어주세요."
+          ></textarea>
+        </div>
 
-<label>
-지역
-<input id="region" required>
-</label>
+        <!-- 스팸 방지용 허니팟 -->
+        <div class="hidden-field" aria-hidden="true">
+          <label for="website">웹사이트</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
 
-<label>
-연락처
-<input id="phone" required>
-</label>
+        <label class="check-wrap" for="privacyConsent">
+          <input id="privacyConsent" name="privacyConsent" type="checkbox" required />
+          <span>
+            상담 진행을 위한 개인정보 수집·이용에 동의합니다.
+          </span>
+        </label>
 
-<label>
-현재 광고 여부
-<select id="adStatus" required>
-<option value="">선택</option>
-<option>진행중</option>
-<option>경험있음</option>
-<option>없음</option>
-</select>
-</label>
+        <button id="submitBtn" class="btn btn-primary" type="submit">
+          상담 신청 보내기
+        </button>
 
-<label>
-플레이스 링크
-<input id="placeLink">
-</label>
+        <div id="submitStatus" class="submit-status" role="status" aria-live="polite"></div>
+      </form>
 
-<label>
-문의내용
-<textarea id="message" required></textarea>
-</label>
+      <p class="contact-note">
+        접수 후 확인하여 순차적으로 연락드립니다.
+      </p>
+    </div>
+  </section>
 
-<button class="btn btn-primary" type="submit">
-상담 신청 보내기
-</button>
+  <script>
+    const APPS_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwLSDjrrynq7hpz2ip7JUgi-B0ikQ4OZbLoWiaEMqG6Nvtzrqi0MCGasUdJzlaQnIhgtg/exec";
 
-<div id="submitStatus" class="submit-status"></div>
+    const form = document.getElementById("consulting-form");
+    const submitBtn = document.getElementById("submitBtn");
+    const statusBox = document.getElementById("submitStatus");
 
-</form>
+    const companyNameInput = document.getElementById("companyName");
+    const businessTypeInput = document.getElementById("businessType");
+    const regionInput = document.getElementById("region");
+    const phoneInput = document.getElementById("phone");
+    const adStatusInput = document.getElementById("adStatus");
+    const placeLinkInput = document.getElementById("placeLink");
+    const messageInput = document.getElementById("message");
+    const websiteInput = document.getElementById("website");
+    const privacyConsentInput = document.getElementById("privacyConsent");
 
-</div>
-</section>
+    function showStatus(type, message) {
+      statusBox.className = "submit-status " + type;
+      statusBox.textContent = message;
+    }
 
-<script>
+    function clearStatus() {
+      statusBox.className = "submit-status";
+      statusBox.textContent = "";
+    }
 
-const APPS_SCRIPT_URL =
-'https://script.google.com/macros/s/AKfycbwLSDjrrynq7hpz2ip7JUgi-B0ikQ4OZbLoWiaEMqG6Nvtzrqi0MCGasUdJzlaQnIhgtg/exec';
+    function formatPhone(value) {
+      return value.replace(/[^\d-]/g, "").trim();
+    }
 
-const form=document.getElementById("consulting-form");
-const statusBox=document.getElementById("submitStatus");
+    function isValidUrl(value) {
+      if (!value) return true;
+      try {
+        new URL(value);
+        return true;
+      } catch {
+        return false;
+      }
+    }
 
-form.addEventListener("submit",async function(e){
+    function validateForm() {
+      const companyName = companyNameInput.value.trim();
+      const businessType = businessTypeInput.value.trim();
+      const region = regionInput.value.trim();
+      const phone = formatPhone(phoneInput.value);
+      const adStatus = adStatusInput.value.trim();
+      const placeLink = placeLinkInput.value.trim();
+      const message = messageInput.value.trim();
 
-e.preventDefault();
+      if (!companyName) {
+        showStatus("error", "업체명을 입력해주세요.");
+        companyNameInput.focus();
+        return false;
+      }
 
-const payload={
-companyName:companyName.value,
-businessType:businessType.value,
-region:region.value,
-phone:phone.value,
-adStatus:adStatus.value,
-placeLink:placeLink.value,
-message:message.value
-};
+      if (!businessType) {
+        showStatus("error", "업종을 입력해주세요.");
+        businessTypeInput.focus();
+        return false;
+      }
 
-try{
+      if (!region) {
+        showStatus("error", "지역을 입력해주세요.");
+        regionInput.focus();
+        return false;
+      }
 
-const res=await fetch(APPS_SCRIPT_URL,{
-method:"POST",
-headers:{'Content-Type':'text/plain;charset=utf-8'},
-body:JSON.stringify(payload)
-});
+      if (!phone) {
+        showStatus("error", "연락처를 입력해주세요.");
+        phoneInput.focus();
+        return false;
+      }
 
-const result=await res.json();
+      if (!adStatus) {
+        showStatus("error", "현재 광고 여부를 선택해주세요.");
+        adStatusInput.focus();
+        return false;
+      }
 
-if(result.success){
+      if (placeLink && !isValidUrl(placeLink)) {
+        showStatus("error", "플레이스 링크 형식이 올바르지 않습니다.");
+        placeLinkInput.focus();
+        return false;
+      }
 
-statusBox.className="submit-status success";
-statusBox.innerText="상담 신청이 정상 접수되었습니다.";
+      if (!message) {
+        showStatus("error", "문의내용을 입력해주세요.");
+        messageInput.focus();
+        return false;
+      }
 
-form.reset();
+      if (!privacyConsentInput.checked) {
+        showStatus("error", "개인정보 수집·이용 동의가 필요합니다.");
+        privacyConsentInput.focus();
+        return false;
+      }
 
-}else{
+      return true;
+    }
 
-throw new Error();
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      clearStatus();
 
-}
+      if (!validateForm()) return;
 
-}catch(e){
+      // 허니팟 입력 시 스팸으로 간주
+      if (websiteInput.value.trim() !== "") {
+        showStatus("success", "상담 신청이 정상 접수되었습니다.");
+        form.reset();
+        return;
+      }
 
-statusBox.className="submit-status error";
-statusBox.innerText="전송 실패. 다시 시도해주세요.";
+      const payload = {
+        companyName: companyNameInput.value.trim(),
+        businessType: businessTypeInput.value.trim(),
+        region: regionInput.value.trim(),
+        phone: formatPhone(phoneInput.value),
+        adStatus: adStatusInput.value.trim(),
+        placeLink: placeLinkInput.value.trim(),
+        message: messageInput.value.trim(),
+        privacyConsent: privacyConsentInput.checked ? "동의" : "미동의",
+        source: "website",
+        createdAt: new Date().toISOString()
+      };
 
-}
+      submitBtn.disabled = true;
+      submitBtn.textContent = "전송 중...";
 
-});
+      try {
+        const res = await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload)
+        });
 
-</script>
+        const text = await res.text();
 
+        let result = {};
+        try {
+          result = JSON.parse(text);
+        } catch {
+          result = {};
+        }
+
+        if (res.ok && (result.success === true || text.includes('"success":true'))) {
+          showStatus("success", "상담 신청이 정상 접수되었습니다.");
+
+          if (typeof gtag === "function") {
+            gtag("event", "generate_lead", {
+              form_name: "consulting_form",
+              page_title: document.title
+            });
+          }
+
+          if (typeof clarity === "function") {
+            clarity("event", "consulting_form_submitted");
+          }
+
+          form.reset();
+        } else {
+          throw new Error("submit_failed");
+        }
+      } catch (error) {
+        showStatus("error", "전송 실패. 다시 시도해주세요.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "상담 신청 보내기";
+      }
+    });
+  </script>
 </body>
 </html>
