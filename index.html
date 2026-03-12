@@ -9,15 +9,6 @@
     name="description"
     content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
   />
-  <meta name="format-detection" content="telephone=no" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="LocalBooster | 로컬 비즈니스 마케팅" />
-  <meta
-    property="og:description"
-    content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
-  />
 
   <!-- Google Tag Manager -->
   <script>
@@ -26,9 +17,9 @@
       w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
       var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),
-          dl=l!='dataLayer' ? '&l='+l : '';
+          dl=l!='dataLayer' ? '&l=' + l : '';
       j.async=true;
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      j.src='https://www.googletagmanager.com/gtm.js?id=' + i + dl;
       f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-M2D936WX');
   </script>
@@ -48,14 +39,16 @@
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);
       t.async=1;
-      t.src="https://www.clarity.ms/tag/"+i;
+      t.src="https://www.clarity.ms/tag/" + i;
       y=l.getElementsByTagName(r)[0];
       y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "vueu1c21ee");
   </script>
 
   <style>
-    * { box-sizing: border-box; }
+    *{
+      box-sizing:border-box;
+    }
 
     body{
       margin:0;
@@ -88,7 +81,7 @@
     .hero-sub{
       margin-top:10px;
       font-size:18px;
-      opacity:0.92;
+      opacity:0.9;
     }
 
     .section{
@@ -108,27 +101,46 @@
       margin:0;
     }
 
+    .contact-form{
+      max-width:600px;
+      margin:auto;
+    }
+
+    .field{
+      margin-bottom:18px;
+    }
+
+    .field label{
+      display:block;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border:1px solid #ddd;
+      border-radius:8px;
+      font:inherit;
+      background:#fff;
+    }
+
+    textarea{
+      min-height:120px;
+      resize:vertical;
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       width:100%;
-      padding:16px 26px;
+      padding:14px 26px;
       border-radius:999px;
       font-weight:800;
       border:none;
       cursor:pointer;
-      transition:opacity .2s ease, transform .2s ease;
       font-size:16px;
-    }
-
-    .btn:hover{
-      opacity:.94;
-    }
-
-    .btn:disabled{
-      opacity:.6;
-      cursor:not-allowed;
     }
 
     .btn-primary{
@@ -136,104 +148,30 @@
       color:#fff;
     }
 
-    .contact-form{
-      max-width:680px;
-      margin:auto;
-      display:grid;
-      gap:18px;
-    }
-
-    .field{
-      display:grid;
-      gap:8px;
-    }
-
-    .field label{
-      font-weight:700;
-      font-size:15px;
-    }
-
-    input, select, textarea{
-      width:100%;
-      padding:14px 14px;
-      border:1px solid #d0d5dd;
-      border-radius:12px;
-      font:inherit;
-      background:#fff;
-      color:#111;
-      outline:none;
-      transition:border-color .2s ease, box-shadow .2s ease;
-    }
-
-    input:focus, select:focus, textarea:focus{
-      border-color:#2b7fff;
-      box-shadow:0 0 0 4px rgba(43,127,255,.12);
-    }
-
-    textarea{
-      min-height:140px;
-      resize:vertical;
-    }
-
-    .help-text{
-      color:#667085;
-      font-size:13px;
-      margin-top:-2px;
-    }
-
-    .check-wrap{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      font-size:14px;
-      color:#344054;
-    }
-
-    .check-wrap input{
-      width:18px;
-      height:18px;
-      margin-top:3px;
-      flex:0 0 auto;
+    .btn:disabled{
+      opacity:.65;
+      cursor:not-allowed;
     }
 
     .submit-status{
       display:none;
-      margin-top:4px;
-      padding:12px 14px;
-      border-radius:12px;
+      margin-top:12px;
+      padding:10px;
+      border-radius:8px;
       font-weight:700;
       text-align:center;
-      font-size:14px;
     }
 
     .submit-status.success{
       display:block;
       background:#e8f9ef;
       color:#0b7c3e;
-      border:1px solid #b7ebc9;
     }
 
     .submit-status.error{
       display:block;
-      background:#fff1f1;
+      background:#ffeaea;
       color:#c80000;
-      border:1px solid #ffcaca;
-    }
-
-    .contact-note{
-      max-width:680px;
-      margin:14px auto 0;
-      color:#667085;
-      font-size:13px;
-      text-align:center;
-    }
-
-    .hidden-field{
-      position:absolute !important;
-      left:-9999px !important;
-      width:1px !important;
-      height:1px !important;
-      overflow:hidden !important;
     }
 
     @media (max-width: 768px){
@@ -283,39 +221,30 @@
     <div class="container">
       <h2 class="section-title">무료 상담 신청</h2>
 
-      <form id="consulting-form" class="contact-form" novalidate>
+      <form id="consulting-form" class="contact-form">
         <div class="field">
           <label for="companyName">업체명</label>
-          <input id="companyName" name="companyName" type="text" required autocomplete="organization" />
+          <input id="companyName" required />
         </div>
 
         <div class="field">
           <label for="businessType">업종</label>
-          <input id="businessType" name="businessType" type="text" required autocomplete="off" />
+          <input id="businessType" required />
         </div>
 
         <div class="field">
           <label for="region">지역</label>
-          <input id="region" name="region" type="text" required autocomplete="address-level2" />
+          <input id="region" required />
         </div>
 
         <div class="field">
           <label for="phone">연락처</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            required
-            inputmode="tel"
-            autocomplete="tel"
-            placeholder="예: 010-1234-5678"
-          />
-          <div class="help-text">숫자와 하이픈만 입력해도 됩니다.</div>
+          <input id="phone" type="tel" required />
         </div>
 
         <div class="field">
           <label for="adStatus">현재 광고 여부</label>
-          <select id="adStatus" name="adStatus" required>
+          <select id="adStatus" required>
             <option value="">선택</option>
             <option value="진행중">진행중</option>
             <option value="경험있음">경험있음</option>
@@ -325,48 +254,20 @@
 
         <div class="field">
           <label for="placeLink">플레이스 링크</label>
-          <input
-            id="placeLink"
-            name="placeLink"
-            type="url"
-            placeholder="https://..."
-            autocomplete="url"
-          />
+          <input id="placeLink" />
         </div>
 
         <div class="field">
           <label for="message">문의내용</label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            placeholder="업체 상황, 원하는 마케팅 방향, 현재 고민 등을 적어주세요."
-          ></textarea>
+          <textarea id="message" required></textarea>
         </div>
-
-        <!-- 스팸 방지용 허니팟 -->
-        <div class="hidden-field" aria-hidden="true">
-          <label for="website">웹사이트</label>
-          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
-        </div>
-
-        <label class="check-wrap" for="privacyConsent">
-          <input id="privacyConsent" name="privacyConsent" type="checkbox" required />
-          <span>
-            상담 진행을 위한 개인정보 수집·이용에 동의합니다.
-          </span>
-        </label>
 
         <button id="submitBtn" class="btn btn-primary" type="submit">
           상담 신청 보내기
         </button>
 
-        <div id="submitStatus" class="submit-status" role="status" aria-live="polite"></div>
+        <div id="submitStatus" class="submit-status"></div>
       </form>
-
-      <p class="contact-note">
-        접수 후 확인하여 순차적으로 연락드립니다.
-      </p>
     </div>
   </section>
 
@@ -385,121 +286,27 @@
     const adStatusInput = document.getElementById("adStatus");
     const placeLinkInput = document.getElementById("placeLink");
     const messageInput = document.getElementById("message");
-    const websiteInput = document.getElementById("website");
-    const privacyConsentInput = document.getElementById("privacyConsent");
 
     function showStatus(type, message) {
       statusBox.className = "submit-status " + type;
-      statusBox.textContent = message;
+      statusBox.innerText = message;
     }
 
-    function clearStatus() {
-      statusBox.className = "submit-status";
-      statusBox.textContent = "";
-    }
-
-    function formatPhone(value) {
-      return value.replace(/[^\d-]/g, "").trim();
-    }
-
-    function isValidUrl(value) {
-      if (!value) return true;
-      try {
-        new URL(value);
-        return true;
-      } catch {
-        return false;
-      }
-    }
-
-    function validateForm() {
-      const companyName = companyNameInput.value.trim();
-      const businessType = businessTypeInput.value.trim();
-      const region = regionInput.value.trim();
-      const phone = formatPhone(phoneInput.value);
-      const adStatus = adStatusInput.value.trim();
-      const placeLink = placeLinkInput.value.trim();
-      const message = messageInput.value.trim();
-
-      if (!companyName) {
-        showStatus("error", "업체명을 입력해주세요.");
-        companyNameInput.focus();
-        return false;
-      }
-
-      if (!businessType) {
-        showStatus("error", "업종을 입력해주세요.");
-        businessTypeInput.focus();
-        return false;
-      }
-
-      if (!region) {
-        showStatus("error", "지역을 입력해주세요.");
-        regionInput.focus();
-        return false;
-      }
-
-      if (!phone) {
-        showStatus("error", "연락처를 입력해주세요.");
-        phoneInput.focus();
-        return false;
-      }
-
-      if (!adStatus) {
-        showStatus("error", "현재 광고 여부를 선택해주세요.");
-        adStatusInput.focus();
-        return false;
-      }
-
-      if (placeLink && !isValidUrl(placeLink)) {
-        showStatus("error", "플레이스 링크 형식이 올바르지 않습니다.");
-        placeLinkInput.focus();
-        return false;
-      }
-
-      if (!message) {
-        showStatus("error", "문의내용을 입력해주세요.");
-        messageInput.focus();
-        return false;
-      }
-
-      if (!privacyConsentInput.checked) {
-        showStatus("error", "개인정보 수집·이용 동의가 필요합니다.");
-        privacyConsentInput.focus();
-        return false;
-      }
-
-      return true;
-    }
-
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener("submit", async function(e) {
       e.preventDefault();
-      clearStatus();
 
-      if (!validateForm()) return;
-
-      // 허니팟 입력 시 스팸으로 간주
-      if (websiteInput.value.trim() !== "") {
-        showStatus("success", "상담 신청이 정상 접수되었습니다.");
-        form.reset();
-        return;
-      }
+      submitBtn.disabled = true;
+      submitBtn.innerText = "전송 중...";
 
       const payload = {
         companyName: companyNameInput.value.trim(),
         businessType: businessTypeInput.value.trim(),
         region: regionInput.value.trim(),
-        phone: formatPhone(phoneInput.value),
-        adStatus: adStatusInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        adStatus: adStatusInput.value,
         placeLink: placeLinkInput.value.trim(),
-        message: messageInput.value.trim(),
-        privacyConsent: privacyConsentInput.checked ? "동의" : "미동의",
-        source: "website",
-        createdAt: new Date().toISOString()
+        message: messageInput.value.trim()
       };
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = "전송 중...";
 
       try {
         const res = await fetch(APPS_SCRIPT_URL, {
@@ -515,17 +322,16 @@
         let result = {};
         try {
           result = JSON.parse(text);
-        } catch {
-          result = {};
+        } catch (err) {
+          result = { success: false };
         }
 
-        if (res.ok && (result.success === true || text.includes('"success":true'))) {
+        if (res.ok && result.success) {
           showStatus("success", "상담 신청이 정상 접수되었습니다.");
 
           if (typeof gtag === "function") {
             gtag("event", "generate_lead", {
-              form_name: "consulting_form",
-              page_title: document.title
+              form_name: "consulting_form"
             });
           }
 
@@ -535,13 +341,14 @@
 
           form.reset();
         } else {
-          throw new Error("submit_failed");
+          showStatus("error", "전송 실패. 다시 시도해주세요.");
         }
-      } catch (error) {
+
+      } catch (e) {
         showStatus("error", "전송 실패. 다시 시도해주세요.");
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = "상담 신청 보내기";
+        submitBtn.innerText = "상담 신청 보내기";
       }
     });
   </script>
