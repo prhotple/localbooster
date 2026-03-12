@@ -12,10 +12,7 @@
     content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
   />
 
-  <!-- =========================
-       1) Google Tag Manager
-       GTM-XXXXXXX 를 실제 값으로 교체
-  ========================== -->
+  <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,10 +21,7 @@
     })(window,document,'script','dataLayer','GTM-XXXXXXX');
   </script>
 
-  <!-- =========================
-       2) Google Analytics 4
-       G-XXXXXXXXXX 를 실제 값으로 교체
-  ========================== -->
+  <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -39,10 +33,7 @@
     });
   </script>
 
-  <!-- =========================
-       3) Microsoft Clarity
-       "CLARITY_PROJECT_ID" 를 실제 값으로 교체
-  ========================== -->
+  <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -51,13 +42,10 @@
     })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
   </script>
 
-  <!-- =========================
-       4) 네이버 광고 전환 추적용 기본 변수
-       아래 값들을 실제 네이버 광고 값으로 교체
-  ========================== -->
+  <!-- Naver Conversion -->
   <script>
     window.NAVER_CONVERSION_CONFIG = {
-      enabled: false, /* true 로 변경 */
+      enabled: false,
       scriptSrc: 'https://wcs.naver.net/wcslog.js',
       advertiserId: 's_XXXXXXXXXXXX',
       conversionType: 'application'
@@ -76,7 +64,6 @@
       --text: #111111;
       --muted: #667085;
       --line: #e6eef8;
-      --line-strong: #d5e3f4;
       --bg: #f5f9fe;
       --white: #ffffff;
       --max: 1180px;
@@ -87,16 +74,10 @@
       --radius-xl: 30px;
       --radius-lg: 24px;
       --radius-md: 16px;
-      --radius-sm: 12px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -109,24 +90,15 @@
       text-rendering: optimizeLegibility;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(var(--max), calc(100% - 24px));
       margin: 0 auto;
     }
 
-    .section {
-      padding: 78px 0;
-    }
+    .section { padding: 78px 0; }
 
     .eyebrow {
       display: inline-block;
@@ -175,17 +147,12 @@
     .btn-primary:hover {
       background: var(--blue-dark);
       transform: translateY(-1px);
-      box-shadow: 0 16px 34px rgba(43, 127, 255, 0.26);
     }
 
     .btn-secondary {
       background: rgba(43, 127, 255, 0.06);
       color: var(--blue);
       border-color: rgba(43, 127, 255, 0.12);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(43, 127, 255, 0.1);
     }
 
     .topbar {
@@ -233,17 +200,9 @@
       letter-spacing: -0.04em;
     }
 
-    .nav {
-      display: none;
-    }
+    .nav, .nav-cta { display: none; }
 
-    .nav-cta {
-      display: none;
-    }
-
-    .hero {
-      padding: 0;
-    }
+    .hero { padding: 0; }
 
     .hero-top {
       background: var(--blue);
@@ -281,9 +240,7 @@
       line-height: 1.5;
     }
 
-    .hero-bottom {
-      background: #f3f9ff;
-    }
+    .hero-bottom { background: #f3f9ff; }
 
     .hero-grid {
       display: grid;
@@ -293,9 +250,7 @@
       align-items: center;
     }
 
-    .hero-space {
-      min-height: 140px;
-    }
+    .hero-space { min-height: 140px; }
 
     .hero-copy {
       width: 100%;
@@ -368,33 +323,9 @@
       box-shadow: var(--shadow);
     }
 
-    .problem-list,
-    .steps,
-    .contact-points {
-      display: grid;
-      gap: 14px;
-    }
-
-    .problem-item,
-    .contact-point {
-      background: #ffffff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 18px;
-    }
-
-    .problem-item strong,
-    .contact-point strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 16px;
-      letter-spacing: -0.02em;
-    }
-
     .services {
       background: var(--blue);
       color: var(--white);
-      position: relative;
       overflow: hidden;
     }
 
@@ -404,14 +335,8 @@
       color: var(--white);
     }
 
-    .services .section-desc {
-      color: rgba(255, 255, 255, 0.86);
-    }
-
-    .services-head {
-      max-width: 820px;
-      margin-bottom: 30px;
-    }
+    .services .section-desc { color: rgba(255, 255, 255, 0.86); }
+    .services-head { max-width: 820px; margin-bottom: 30px; }
 
     .services-topline {
       display: flex;
@@ -431,7 +356,6 @@
       color: rgba(255, 255, 255, 0.96);
       font-size: 13px;
       font-weight: 700;
-      backdrop-filter: blur(8px);
     }
 
     .cards {
@@ -477,8 +401,6 @@
       justify-content: center;
       font-size: 18px;
       font-weight: 900;
-      flex: 0 0 auto;
-      border: 1px solid rgba(255, 255, 255, 0.16);
     }
 
     .card-label {
@@ -529,7 +451,6 @@
       margin-bottom: 4px;
       font-size: 13px;
       color: rgba(255, 255, 255, 1);
-      letter-spacing: -0.02em;
     }
 
     .meta-box span {
@@ -574,7 +495,6 @@
       background: rgba(255, 255, 255, 0.14);
       color: rgba(255, 255, 255, 0.92);
       font-size: 14px;
-      box-shadow: var(--shadow-blue);
     }
 
     .about-feature-list {
@@ -594,12 +514,7 @@
       display: block;
       margin-bottom: 6px;
       font-size: 16px;
-      letter-spacing: -0.02em;
       color: var(--text);
-    }
-
-    .impact-section {
-      background: #ffffff;
     }
 
     .impact-band {
@@ -651,6 +566,11 @@
       line-height: 1.6;
     }
 
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
     .step {
       display: grid;
       grid-template-columns: 54px 1fr;
@@ -679,7 +599,6 @@
     .step h4 {
       margin: 2px 0 4px;
       font-size: 18px;
-      letter-spacing: -0.03em;
     }
 
     .step p {
@@ -699,7 +618,6 @@
       border-radius: var(--radius-2xl);
       padding: 30px 24px;
       box-shadow: 0 26px 60px rgba(43, 127, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .cta-band h3 {
@@ -751,7 +669,6 @@
       margin-bottom: 4px;
       font-size: 20px;
       font-weight: 900;
-      letter-spacing: -0.03em;
       color: var(--blue);
     }
 
@@ -801,7 +718,6 @@
       display: block;
       margin-bottom: 6px;
       font-size: 24px;
-      letter-spacing: -0.03em;
       color: var(--white);
     }
 
@@ -875,14 +791,36 @@
       margin-top: 4px;
     }
 
-    .submit-btn {
-      width: 100%;
-    }
+    .submit-btn { width: 100%; }
 
     .submit-sub {
       font-size: 12px;
       color: #98a2b3;
       text-align: center;
+    }
+
+    .submit-status {
+      display: none;
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .submit-status.is-success {
+      display: block;
+      background: #eefaf2;
+      color: #127a3d;
+      border: 1px solid #cdeed7;
+    }
+
+    .submit-status.is-error {
+      display: block;
+      background: #fff3f2;
+      color: #bf3b2f;
+      border: 1px solid #ffd5d0;
     }
 
     .footer {
@@ -917,9 +855,7 @@
         padding: 58px 0 74px;
       }
 
-      .hero-space {
-        min-height: 180px;
-      }
+      .hero-space { min-height: 180px; }
 
       .hero-copy h2 {
         margin: 0 0 6px;
@@ -953,25 +889,12 @@
         gap: 34px;
       }
 
-      .form-grid {
-        grid-template-columns: 1fr 1fr;
-      }
+      .form-grid { grid-template-columns: 1fr 1fr; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      .card-meta { grid-template-columns: 1fr 1fr; }
 
-      .cards {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .card-meta {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cta-band {
-        padding: 44px 38px;
-      }
-
-      .cta-band .btn {
-        width: auto;
-      }
+      .cta-band { padding: 44px 38px; }
+      .cta-band .btn { width: auto; }
 
       .footer-inner {
         flex-direction: row;
@@ -981,9 +904,7 @@
     }
 
     @media (min-width: 1100px) {
-      .topbar-inner {
-        min-height: 74px;
-      }
+      .topbar-inner { min-height: 74px; }
 
       .nav {
         display: flex;
@@ -994,9 +915,7 @@
         color: #303641;
       }
 
-      .nav a:hover {
-        color: var(--blue);
-      }
+      .nav a:hover { color: var(--blue); }
 
       .nav-cta {
         display: flex;
@@ -1004,9 +923,7 @@
         gap: 12px;
       }
 
-      .cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .cards { grid-template-columns: repeat(3, 1fr); }
 
       .box,
       .contact-form-wrap,
@@ -1021,14 +938,11 @@
         margin: -32px -32px 24px;
       }
 
-      .cta-band {
-        padding: 54px 52px;
-      }
+      .cta-band { padding: 54px 52px; }
     }
   </style>
 </head>
 <body>
-  <!-- GTM noscript -->
   <noscript>
     <iframe
       src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
@@ -1084,19 +998,8 @@
             </ul>
 
             <div class="hero-actions">
-              <a
-                class="btn btn-primary"
-                href="#contact"
-                data-track-click="hero_free_consulting"
-                data-track-category="hero_cta"
-              >무료 상권 분석 상담</a>
-
-              <a
-                class="btn btn-secondary"
-                href="#services"
-                data-track-click="hero_service_view"
-                data-track-category="hero_cta"
-              >서비스 자세히 보기</a>
+              <a class="btn btn-primary" href="#contact" data-track-click="hero_free_consulting" data-track-category="hero_cta">무료 상권 분석 상담</a>
+              <a class="btn btn-secondary" href="#services" data-track-click="hero_service_view" data-track-category="hero_cta">서비스 자세히 보기</a>
             </div>
           </div>
         </div>
@@ -1367,12 +1270,7 @@
             지금 매장의 검색 구조, 플레이스 상태, 랜딩 메시지가 맞는지부터 보는 게 먼저입니다.
             업종과 지역 기준으로 방향을 정리해드립니다.
           </p>
-          <a
-            class="btn btn-primary"
-            href="#contact"
-            data-track-click="mid_free_consulting"
-            data-track-category="cta"
-          >무료 상권 분석 상담 받기</a>
+          <a class="btn btn-primary" href="#contact" data-track-click="mid_free_consulting" data-track-category="cta">무료 상권 분석 상담 받기</a>
         </div>
       </div>
     </section>
@@ -1422,68 +1320,44 @@
             <p>아래 정보를 남겨주시면 검토 후 순차적으로 연락드립니다.</p>
           </div>
 
-          <!--
-            권장:
-            FormSubmit 대신 Apps Script / Make / Zapier / Basin / Formspree 등을 사용하면
-            Google Sheets 저장 및 상태관리까지 연결하기 더 좋습니다.
-            현재는 기존 구조 유지 + 전환 추적만 추가
-          -->
-          <form
-            id="consulting-form"
-            action="https://formsubmit.co/prhotple@naver.com"
-            method="POST"
-            data-track-form="consulting_form"
-          >
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="LocalBooster 홈페이지 상담 문의" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://prhotple.github.io/localbooster/thanks.html" />
-
-            <!-- UTM 및 referrer 수집 -->
-            <input type="hidden" name="utm_source" id="utm_source" />
-            <input type="hidden" name="utm_medium" id="utm_medium" />
-            <input type="hidden" name="utm_campaign" id="utm_campaign" />
-            <input type="hidden" name="utm_term" id="utm_term" />
-            <input type="hidden" name="utm_content" id="utm_content" />
-            <input type="hidden" name="first_referrer" id="first_referrer" />
-            <input type="hidden" name="landing_page" id="landing_page" />
-            <input type="hidden" name="device_type" id="device_type" />
+          <form id="consulting-form" data-track-form="consulting_form">
+            <input type="hidden" id="utm_source" />
+            <input type="hidden" id="utm_medium" />
+            <input type="hidden" id="utm_campaign" />
+            <input type="hidden" id="utm_term" />
+            <input type="hidden" id="utm_content" />
+            <input type="hidden" id="first_referrer" />
+            <input type="hidden" id="landing_page" />
+            <input type="hidden" id="device_type" />
 
             <div class="form-grid">
               <label>
                 업체명
-                <input type="text" name="업체명" placeholder="예: 업체명 입력" required />
+                <input type="text" id="companyName" placeholder="예: 업체명 입력" required />
               </label>
 
               <label>
                 업종
-                <input type="text" name="업종" placeholder="예: 고깃집, 카페, 병원" required />
+                <input type="text" id="businessType" placeholder="예: 고깃집, 카페, 병원" required />
               </label>
             </div>
 
             <div class="form-grid">
               <label>
                 지역
-                <input type="text" name="지역" placeholder="예: 대구 달서구" required />
+                <input type="text" id="region" placeholder="예: 대구 달서구" required />
               </label>
 
               <label>
                 연락처
-                <input
-                  type="tel"
-                  name="연락처"
-                  placeholder="예: 010-1234-5678"
-                  required
-                  data-track-click="phone_input_focus"
-                  data-track-category="form"
-                />
+                <input type="tel" id="phone" placeholder="예: 010-1234-5678" required />
               </label>
             </div>
 
             <div class="form-grid">
               <label>
                 현재 광고 여부
-                <select name="현재 광고 여부" required>
+                <select id="adStatus" required>
                   <option value="">선택해주세요</option>
                   <option>진행 중</option>
                   <option>이전 진행 경험 있음</option>
@@ -1493,37 +1367,33 @@
 
               <label>
                 플레이스 링크
-                <input
-                  type="url"
-                  name="플레이스 링크"
-                  placeholder="네이버 플레이스 링크 입력"
-                  data-track-click="place_url_input_focus"
-                  data-track-category="form"
-                />
+                <input type="url" id="placeLink" placeholder="네이버 플레이스 링크 입력" />
               </label>
             </div>
 
             <label>
               문의 내용
               <textarea
-                name="문의 내용"
+                id="message"
                 placeholder="현재 고민이나 원하는 방향을 적어주세요. 예: 플레이스 노출이 약하고, 체험단과 광고 운영도 필요합니다."
                 required
               ></textarea>
             </label>
 
             <p class="form-note">
-              처음 1회는 FormSubmit 승인 메일을 확인해야 정상 수신될 수 있습니다.
+              제출 데이터는 내부 확인용 Google Sheets에 자동 저장됩니다.
             </p>
 
             <div class="form-actions">
               <button
                 type="submit"
+                id="submitBtn"
                 class="btn btn-primary submit-btn"
                 data-track-click="consulting_form_submit_button"
                 data-track-category="form"
               >상담 신청 보내기</button>
               <div class="submit-sub">업종 · 상권 · 현재 상태 기준으로 검토 후 연락드립니다.</div>
+              <div id="submitStatus" class="submit-status"></div>
             </div>
           </form>
         </div>
@@ -1539,9 +1409,8 @@
   </footer>
 
   <script>
-    /* =========================
-       공통 유틸
-    ========================== */
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLSDjrrynq7hpz2ip7JUgi-B0ikQ4OZbLoWiaEMqG6Nvtzrqi0MCGasUdJzlaQnIhgtg/exec';
+
     function getQueryParam(name) {
       const params = new URLSearchParams(window.location.search);
       return params.get(name) || '';
@@ -1559,12 +1428,8 @@
       try { return localStorage.getItem(key); } catch (e) { return null; }
     }
 
-    /* =========================
-       UTM / 유입 정보 저장
-    ========================== */
     (function initAttribution() {
       const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-
       utmKeys.forEach(function(key) {
         const value = getQueryParam(key);
         if (value) safeStorageSet(key, value);
@@ -1577,9 +1442,6 @@
       safeStorageSet('landing_page', window.location.href);
     })();
 
-    /* =========================
-       hidden field 주입
-    ========================== */
     (function fillHiddenFields() {
       const mapping = [
         'utm_source',
@@ -1600,9 +1462,6 @@
       if (deviceInput) deviceInput.value = getDeviceType();
     })();
 
-    /* =========================
-       GA4 / dataLayer 이벤트 전송
-    ========================== */
     function pushTrackingEvent(eventName, payload) {
       const eventPayload = Object.assign({
         event: eventName,
@@ -1633,9 +1492,6 @@
       }
     }
 
-    /* =========================
-       네이버 전환 추적 로드
-    ========================== */
     (function initNaverTracking() {
       const cfg = window.NAVER_CONVERSION_CONFIG;
       if (!cfg || !cfg.enabled || !cfg.scriptSrc || !cfg.advertiserId) return;
@@ -1659,16 +1515,11 @@
       if (!cfg || !cfg.enabled) return;
       if (window.wcs && window.wcs.trans) {
         try {
-          window.wcs.trans({
-            type: cfg.conversionType || 'application'
-          });
+          window.wcs.trans({ type: cfg.conversionType || 'application' });
         } catch (e) {}
       }
     }
 
-    /* =========================
-       클릭 이벤트 추적
-    ========================== */
     document.addEventListener('click', function(e) {
       const target = e.target.closest('[data-track-click]');
       if (!target) return;
@@ -1684,9 +1535,6 @@
       });
     });
 
-    /* =========================
-       스크롤 깊이 추적
-    ========================== */
     (function initScrollTracking() {
       const checkpoints = [25, 50, 75, 90];
       const fired = {};
@@ -1717,42 +1565,6 @@
       window.addEventListener('scroll', onScroll, { passive: true });
     })();
 
-    /* =========================
-       폼 시작 / 제출 추적
-    ========================== */
-    (function initFormTracking() {
-      const form = document.getElementById('consulting-form');
-      if (!form) return;
-
-      let started = false;
-
-      form.addEventListener('focusin', function() {
-        if (started) return;
-        started = true;
-        pushTrackingEvent('form_start', {
-          category: 'form',
-          label: 'consulting_form'
-        });
-      });
-
-      form.addEventListener('submit', function() {
-        pushTrackingEvent('generate_lead', {
-          category: 'conversion',
-          label: 'consulting_form_submit'
-        });
-
-        pushTrackingEvent('form_submit', {
-          category: 'form',
-          label: 'consulting_form_submit'
-        });
-
-        fireNaverConversion();
-      });
-    })();
-
-    /* =========================
-       페이지 체류 시간 단순 추적
-    ========================== */
     (function initTimeTracking() {
       const start = Date.now();
       let fired30 = false;
@@ -1779,29 +1591,111 @@
       }, 5000);
     })();
 
-    /* =========================
-       외부 링크 클릭 추적
-    ========================== */
-    document.addEventListener('click', function(e) {
-      const link = e.target.closest('a[href]');
-      if (!link) return;
+    async function submitToGoogleSheets(payload) {
+      const response = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      });
 
-      const href = link.getAttribute('href') || '';
-      const isExternal = href.startsWith('http') && !href.includes(location.hostname);
+      return await response.json();
+    }
 
-      if (isExternal) {
-        pushTrackingEvent('external_link_click', {
-          category: 'outbound',
-          label: href
+    (function initFormTracking() {
+      const form = document.getElementById('consulting-form');
+      const submitBtn = document.getElementById('submitBtn');
+      const submitStatus = document.getElementById('submitStatus');
+
+      if (!form) return;
+
+      let started = false;
+
+      form.addEventListener('focusin', function() {
+        if (started) return;
+        started = true;
+        pushTrackingEvent('form_start', {
+          category: 'form',
+          label: 'consulting_form'
         });
-      }
-    });
+      });
 
-    /* =========================
-       네이버 플레이스 링크용 추적 함수 예시
-       추후 플레이스 버튼 추가시 onclick에 사용
-       onclick="trackPlaceClick('main_place_link')"
-    ========================== */
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const payload = {
+          companyName: document.getElementById('companyName').value.trim(),
+          businessType: document.getElementById('businessType').value.trim(),
+          region: document.getElementById('region').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          adStatus: document.getElementById('adStatus').value,
+          placeLink: document.getElementById('placeLink').value.trim(),
+          message: document.getElementById('message').value.trim(),
+          utm_source: safeStorageGet('utm_source') || '',
+          utm_medium: safeStorageGet('utm_medium') || '',
+          utm_campaign: safeStorageGet('utm_campaign') || '',
+          utm_term: safeStorageGet('utm_term') || '',
+          utm_content: safeStorageGet('utm_content') || '',
+          first_referrer: safeStorageGet('first_referrer') || '',
+          landing_page: safeStorageGet('landing_page') || window.location.href,
+          device_type: getDeviceType()
+        };
+
+        if (!payload.companyName || !payload.businessType || !payload.region || !payload.phone || !payload.adStatus || !payload.message) {
+          submitStatus.className = 'submit-status is-error';
+          submitStatus.textContent = '필수 항목을 모두 입력해주세요.';
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = '전송 중...';
+        submitStatus.className = 'submit-status';
+        submitStatus.textContent = '';
+
+        try {
+          pushTrackingEvent('generate_lead', {
+            category: 'conversion',
+            label: 'consulting_form_submit'
+          });
+
+          pushTrackingEvent('form_submit', {
+            category: 'form',
+            label: 'consulting_form_submit'
+          });
+
+          const result = await submitToGoogleSheets(payload);
+
+          if (result && result.success) {
+            fireNaverConversion();
+
+            submitStatus.className = 'submit-status is-success';
+            submitStatus.textContent = '상담 신청이 정상 접수되었습니다.';
+            form.reset();
+
+            document.getElementById('utm_source').value = safeStorageGet('utm_source') || '';
+            document.getElementById('utm_medium').value = safeStorageGet('utm_medium') || '';
+            document.getElementById('utm_campaign').value = safeStorageGet('utm_campaign') || '';
+            document.getElementById('utm_term').value = safeStorageGet('utm_term') || '';
+            document.getElementById('utm_content').value = safeStorageGet('utm_content') || '';
+            document.getElementById('first_referrer').value = safeStorageGet('first_referrer') || '';
+            document.getElementById('landing_page').value = safeStorageGet('landing_page') || '';
+            document.getElementById('device_type').value = getDeviceType();
+          } else {
+            throw new Error((result && result.message) || 'Submit failed');
+          }
+        } catch (error) {
+          submitStatus.className = 'submit-status is-error';
+          submitStatus.textContent = '전송 중 문제가 발생했습니다. 잠시 후 다시 시도해주세요.';
+          console.error(error);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '상담 신청 보내기';
+        }
+      });
+    })();
+
     function trackPlaceClick(label) {
       pushTrackingEvent('place_link_click', {
         category: 'naver_place',
@@ -1809,11 +1703,6 @@
       });
     }
 
-    /* =========================
-       전화 클릭용 추적 함수 예시
-       추후 tel 링크 추가시 onclick에 사용
-       onclick="trackPhoneClick('header_phone')"
-    ========================== */
     function trackPhoneClick(label) {
       pushTrackingEvent('phone_click', {
         category: 'contact',
