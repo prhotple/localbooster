@@ -2,10 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>LocalBooster | 로컬 비즈니스 마케팅</title>
   <meta
     name="description"
@@ -58,14 +55,9 @@
       --blue: #2b7fff;
       --blue-dark: #1d67d8;
       --blue-deep: #1552b8;
-      --blue-navy: #103f8f;
-      --blue-light: #dff0ff;
-      --blue-soft: #eef7ff;
-      --blue-soft-2: #f7fbff;
       --text: #111111;
       --muted: #667085;
       --line: #e6eef8;
-      --bg: #f5f9fe;
       --white: #ffffff;
       --max: 1180px;
       --shadow: 0 18px 48px rgba(17, 17, 17, 0.08);
@@ -706,26 +698,6 @@
       color: #0f1728;
     }
 
-    .contact-links {
-      display: grid;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 16px;
-      border-radius: 16px;
-      background: #f7fbff;
-      border: 1px solid rgba(43, 127, 255, 0.12);
-      color: var(--blue);
-      font-weight: 800;
-      text-align: center;
-    }
-
     .contact-form-wrap {
       background: #ffffff;
       border: 1px solid rgba(43, 127, 255, 0.08);
@@ -836,6 +808,8 @@
       color: #475467;
       line-height: 1.6;
       font-weight: 500;
+      display: block;
+      cursor: pointer;
     }
 
     .hidden-field {
@@ -1375,25 +1349,6 @@
               플레이스 링크와 현재 고민을 함께 남기면 더 정확하게 검토할 수 있습니다.
             </div>
           </div>
-
-          <div class="contact-links">
-            <a
-              href="tel:01012345678"
-              class="contact-link"
-              onclick="trackPhoneClick('contact_phone_main')"
-            >
-              전화 상담 연결
-            </a>
-            <a
-              href="https://map.naver.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact-link"
-              onclick="trackPlaceClick('contact_naver_place')"
-            >
-              네이버 플레이스 바로가기
-            </a>
-          </div>
         </div>
 
         <div class="contact-form-wrap">
@@ -1420,24 +1375,57 @@
             <div class="form-grid">
               <label for="companyName">
                 업체명
-                <input type="text" id="companyName" name="companyName" placeholder="예: 업체명 입력" required autocomplete="organization" />
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  placeholder="예: 업체명 입력"
+                  required
+                  autocomplete="organization"
+                  maxlength="100"
+                />
               </label>
 
               <label for="businessType">
                 업종
-                <input type="text" id="businessType" name="businessType" placeholder="예: 고깃집, 카페, 병원" required autocomplete="off" />
+                <input
+                  type="text"
+                  id="businessType"
+                  name="businessType"
+                  placeholder="예: 고깃집, 카페, 병원"
+                  required
+                  autocomplete="off"
+                  maxlength="100"
+                />
               </label>
             </div>
 
             <div class="form-grid">
               <label for="region">
                 지역
-                <input type="text" id="region" name="region" placeholder="예: 대구 달서구" required autocomplete="address-level2" />
+                <input
+                  type="text"
+                  id="region"
+                  name="region"
+                  placeholder="예: 대구 달서구"
+                  required
+                  autocomplete="address-level2"
+                  maxlength="100"
+                />
               </label>
 
               <label for="phone">
                 연락처
-                <input type="tel" id="phone" name="phone" placeholder="예: 010-1234-5678" required inputmode="tel" autocomplete="tel" />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="예: 010-1234-5678"
+                  required
+                  inputmode="tel"
+                  autocomplete="tel"
+                  maxlength="20"
+                />
               </label>
             </div>
 
@@ -1454,7 +1442,14 @@
 
               <label for="placeLink">
                 플레이스 링크
-                <input type="url" id="placeLink" name="placeLink" placeholder="네이버 플레이스 링크 입력" autocomplete="url" />
+                <input
+                  type="url"
+                  id="placeLink"
+                  name="placeLink"
+                  placeholder="네이버 플레이스 링크 입력"
+                  autocomplete="url"
+                  maxlength="500"
+                />
               </label>
             </div>
 
@@ -1465,6 +1460,7 @@
                 name="message"
                 placeholder="현재 고민이나 원하는 방향을 적어주세요. 예: 플레이스 노출이 약하고, 체험단과 광고 운영도 필요합니다."
                 required
+                maxlength="3000"
               ></textarea>
             </label>
 
@@ -1527,12 +1523,12 @@
       return String(value || '').trim();
     }
 
-    function formatPhone(value) {
-      return safeTrim(value).replace(/[^\d-]/g, '');
+    function normalizeWhitespace(value) {
+      return safeTrim(value).replace(/\s+/g, ' ');
     }
 
-    function getTelHrefValue(value) {
-      return safeTrim(value).replace(/[^\d+]/g, '');
+    function formatPhone(value) {
+      return safeTrim(value).replace(/[^\d-]/g, '');
     }
 
     function isLikelyPhone(value) {
@@ -1581,17 +1577,6 @@
 
       const deviceInput = document.getElementById('device_type');
       if (deviceInput) deviceInput.value = getDeviceType();
-    }
-
-    function syncPhoneLink() {
-      const phoneInput = document.getElementById('phone');
-      const phoneLink = document.querySelector('a[href^="tel:"]');
-      if (!phoneInput || !phoneLink) return;
-
-      const telValue = getTelHrefValue(phoneInput.value);
-      if (telValue) {
-        phoneLink.setAttribute('href', 'tel:' + telValue);
-      }
     }
 
     (function initAttribution() {
@@ -1779,9 +1764,6 @@
       let started = false;
       let isSubmitting = false;
 
-      phoneEl.addEventListener('input', syncPhoneLink);
-      syncPhoneLink();
-
       form.addEventListener('focusin', function() {
         if (started) return;
         started = true;
@@ -1798,13 +1780,13 @@
         clearStatus();
 
         const payload = {
-          companyName: safeTrim(companyNameEl.value),
-          businessType: safeTrim(businessTypeEl.value),
-          region: safeTrim(regionEl.value),
+          companyName: normalizeWhitespace(companyNameEl.value),
+          businessType: normalizeWhitespace(businessTypeEl.value),
+          region: normalizeWhitespace(regionEl.value),
           phone: formatPhone(phoneEl.value),
           adStatus: safeTrim(adStatusEl.value),
           placeLink: safeTrim(placeLinkEl.value),
-          message: safeTrim(messageEl.value),
+          message: normalizeWhitespace(messageEl.value),
           privacyConsent: privacyConsentEl.checked ? '동의' : '미동의',
           utm_source: safeStorageGet('utm_source') || '',
           utm_medium: safeStorageGet('utm_medium') || '',
@@ -1875,7 +1857,6 @@
           setStatus('is-success', '상담 신청이 정상 접수되었습니다.');
           form.reset();
           refillHiddenFields();
-          syncPhoneLink();
           return;
         }
 
@@ -1914,7 +1895,6 @@
             setStatus('is-success', '상담 신청이 정상 접수되었습니다.');
             form.reset();
             refillHiddenFields();
-            syncPhoneLink();
           } else {
             throw new Error((result && (result.message || result.error)) || 'Submit failed');
           }
@@ -1933,20 +1913,6 @@
         }
       });
     })();
-
-    function trackPlaceClick(label) {
-      pushTrackingEvent('place_link_click', {
-        category: 'naver_place',
-        label: label || 'place_link'
-      });
-    }
-
-    function trackPhoneClick(label) {
-      pushTrackingEvent('phone_click', {
-        category: 'contact',
-        label: label || 'phone_link'
-      });
-    }
   </script>
 </body>
 </html>
