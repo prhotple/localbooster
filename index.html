@@ -706,6 +706,26 @@
       color: #0f1728;
     }
 
+    .contact-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 16px;
+      border-radius: 16px;
+      background: #f7fbff;
+      border: 1px solid rgba(43, 127, 255, 0.12);
+      color: var(--blue);
+      font-weight: 800;
+      text-align: center;
+    }
+
     .contact-form-wrap {
       background: #ffffff;
       border: 1px solid rgba(43, 127, 255, 0.08);
@@ -1355,6 +1375,25 @@
               플레이스 링크와 현재 고민을 함께 남기면 더 정확하게 검토할 수 있습니다.
             </div>
           </div>
+
+          <div class="contact-links">
+            <a
+              href="tel:01012345678"
+              class="contact-link"
+              onclick="trackPhoneClick('contact_phone_main')"
+            >
+              전화 상담 연결
+            </a>
+            <a
+              href="https://map.naver.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-link"
+              onclick="trackPlaceClick('contact_naver_place')"
+            >
+              네이버 플레이스 바로가기
+            </a>
+          </div>
         </div>
 
         <div class="contact-form-wrap">
@@ -1492,6 +1531,15 @@
       return safeTrim(value).replace(/[^\d-]/g, '');
     }
 
+    function getTelHrefValue(value) {
+      return safeTrim(value).replace(/[^\d+]/g, '');
+    }
+
+    function isLikelyPhone(value) {
+      const digits = safeTrim(value).replace(/\D/g, '');
+      return digits.length >= 9 && digits.length <= 11;
+    }
+
     function isValidUrl(value) {
       const text = safeTrim(value);
       if (!text) return true;
@@ -1533,6 +1581,17 @@
 
       const deviceInput = document.getElementById('device_type');
       if (deviceInput) deviceInput.value = getDeviceType();
+    }
+
+    function syncPhoneLink() {
+      const phoneInput = document.getElementById('phone');
+      const phoneLink = document.querySelector('a[href^="tel:"]');
+      if (!phoneInput || !phoneLink) return;
+
+      const telValue = getTelHrefValue(phoneInput.value);
+      if (telValue) {
+        phoneLink.setAttribute('href', 'tel:' + telValue);
+      }
     }
 
     (function initAttribution() {
@@ -1720,6 +1779,9 @@
       let started = false;
       let isSubmitting = false;
 
+      phoneEl.addEventListener('input', syncPhoneLink);
+      syncPhoneLink();
+
       form.addEventListener('focusin', function() {
         if (started) return;
         started = true;
@@ -1779,6 +1841,12 @@
           return;
         }
 
+        if (!isLikelyPhone(payload.phone)) {
+          setStatus('is-error', '연락처 형식이 올바르지 않습니다.');
+          phoneEl.focus();
+          return;
+        }
+
         if (!payload.adStatus) {
           setStatus('is-error', '현재 광고 여부를 선택해주세요.');
           adStatusEl.focus();
@@ -1807,6 +1875,7 @@
           setStatus('is-success', '상담 신청이 정상 접수되었습니다.');
           form.reset();
           refillHiddenFields();
+          syncPhoneLink();
           return;
         }
 
@@ -1845,6 +1914,7 @@
             setStatus('is-success', '상담 신청이 정상 접수되었습니다.');
             form.reset();
             refillHiddenFields();
+            syncPhoneLink();
           } else {
             throw new Error((result && (result.message || result.error)) || 'Submit failed');
           }
