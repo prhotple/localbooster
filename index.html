@@ -11,6 +11,59 @@
     name="description"
     content="네이버 플레이스, 체험단, 퍼포먼스 마케팅까지. 로컬 비즈니스에 맞는 마케팅 전략을 설계합니다."
   />
+
+  <!-- =========================
+       1) Google Tag Manager
+       GTM-XXXXXXX 를 실제 값으로 교체
+  ========================== -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');
+  </script>
+
+  <!-- =========================
+       2) Google Analytics 4
+       G-XXXXXXXXXX 를 실제 값으로 교체
+  ========================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      anonymize_ip: true,
+      send_page_view: true
+    });
+  </script>
+
+  <!-- =========================
+       3) Microsoft Clarity
+       "CLARITY_PROJECT_ID" 를 실제 값으로 교체
+  ========================== -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+  </script>
+
+  <!-- =========================
+       4) 네이버 광고 전환 추적용 기본 변수
+       아래 값들을 실제 네이버 광고 값으로 교체
+  ========================== -->
+  <script>
+    window.NAVER_CONVERSION_CONFIG = {
+      enabled: false, /* true 로 변경 */
+      scriptSrc: 'https://wcs.naver.net/wcslog.js',
+      advertiserId: 's_XXXXXXXXXXXX',
+      conversionType: 'application'
+    };
+  </script>
+
   <style>
     :root {
       --blue: #2b7fff;
@@ -975,23 +1028,33 @@
   </style>
 </head>
 <body>
+  <!-- GTM noscript -->
+  <noscript>
+    <iframe
+      src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+      height="0"
+      width="0"
+      style="display:none;visibility:hidden"
+    ></iframe>
+  </noscript>
+
   <header class="topbar">
     <div class="container topbar-inner">
-      <a href="#top" class="brand">
+      <a href="#top" class="brand" data-track-click="brand_click" data-track-category="navigation">
         <span class="brand-mark">LB</span>
         <span class="brand-text">LocalBooster</span>
       </a>
 
       <nav class="nav">
-        <a href="#about">소개</a>
-        <a href="#services">서비스</a>
-        <a href="#process">프로세스</a>
-        <a href="#contact">문의</a>
+        <a href="#about" data-track-click="nav_about" data-track-category="navigation">소개</a>
+        <a href="#services" data-track-click="nav_services" data-track-category="navigation">서비스</a>
+        <a href="#process" data-track-click="nav_process" data-track-category="navigation">프로세스</a>
+        <a href="#contact" data-track-click="nav_contact" data-track-category="navigation">문의</a>
       </nav>
 
       <div class="nav-cta">
-        <a class="btn btn-secondary" href="#services">서비스 보기</a>
-        <a class="btn btn-primary" href="#contact">무료 상담 신청</a>
+        <a class="btn btn-secondary" href="#services" data-track-click="top_service_view" data-track-category="cta">서비스 보기</a>
+        <a class="btn btn-primary" href="#contact" data-track-click="top_free_consulting" data-track-category="cta">무료 상담 신청</a>
       </div>
     </div>
   </header>
@@ -1021,8 +1084,19 @@
             </ul>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">무료 상권 분석 상담</a>
-              <a class="btn btn-secondary" href="#services">서비스 자세히 보기</a>
+              <a
+                class="btn btn-primary"
+                href="#contact"
+                data-track-click="hero_free_consulting"
+                data-track-category="hero_cta"
+              >무료 상권 분석 상담</a>
+
+              <a
+                class="btn btn-secondary"
+                href="#services"
+                data-track-click="hero_service_view"
+                data-track-category="hero_cta"
+              >서비스 자세히 보기</a>
             </div>
           </div>
         </div>
@@ -1293,7 +1367,12 @@
             지금 매장의 검색 구조, 플레이스 상태, 랜딩 메시지가 맞는지부터 보는 게 먼저입니다.
             업종과 지역 기준으로 방향을 정리해드립니다.
           </p>
-          <a class="btn btn-primary" href="#contact">무료 상권 분석 상담 받기</a>
+          <a
+            class="btn btn-primary"
+            href="#contact"
+            data-track-click="mid_free_consulting"
+            data-track-category="cta"
+          >무료 상권 분석 상담 받기</a>
         </div>
       </div>
     </section>
@@ -1343,15 +1422,32 @@
             <p>아래 정보를 남겨주시면 검토 후 순차적으로 연락드립니다.</p>
           </div>
 
-          <form action="https://formsubmit.co/prhotple@naver.com" method="POST">
+          <!--
+            권장:
+            FormSubmit 대신 Apps Script / Make / Zapier / Basin / Formspree 등을 사용하면
+            Google Sheets 저장 및 상태관리까지 연결하기 더 좋습니다.
+            현재는 기존 구조 유지 + 전환 추적만 추가
+          -->
+          <form
+            id="consulting-form"
+            action="https://formsubmit.co/prhotple@naver.com"
+            method="POST"
+            data-track-form="consulting_form"
+          >
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_subject" value="LocalBooster 홈페이지 상담 문의" />
             <input type="hidden" name="_template" value="table" />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://prhotple.github.io/localbooster/thanks.html"
-            />
+            <input type="hidden" name="_next" value="https://prhotple.github.io/localbooster/thanks.html" />
+
+            <!-- UTM 및 referrer 수집 -->
+            <input type="hidden" name="utm_source" id="utm_source" />
+            <input type="hidden" name="utm_medium" id="utm_medium" />
+            <input type="hidden" name="utm_campaign" id="utm_campaign" />
+            <input type="hidden" name="utm_term" id="utm_term" />
+            <input type="hidden" name="utm_content" id="utm_content" />
+            <input type="hidden" name="first_referrer" id="first_referrer" />
+            <input type="hidden" name="landing_page" id="landing_page" />
+            <input type="hidden" name="device_type" id="device_type" />
 
             <div class="form-grid">
               <label>
@@ -1373,7 +1469,14 @@
 
               <label>
                 연락처
-                <input type="tel" name="연락처" placeholder="예: 010-1234-5678" required />
+                <input
+                  type="tel"
+                  name="연락처"
+                  placeholder="예: 010-1234-5678"
+                  required
+                  data-track-click="phone_input_focus"
+                  data-track-category="form"
+                />
               </label>
             </div>
 
@@ -1390,7 +1493,13 @@
 
               <label>
                 플레이스 링크
-                <input type="url" name="플레이스 링크" placeholder="네이버 플레이스 링크 입력" />
+                <input
+                  type="url"
+                  name="플레이스 링크"
+                  placeholder="네이버 플레이스 링크 입력"
+                  data-track-click="place_url_input_focus"
+                  data-track-category="form"
+                />
               </label>
             </div>
 
@@ -1408,7 +1517,12 @@
             </p>
 
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary submit-btn">상담 신청 보내기</button>
+              <button
+                type="submit"
+                class="btn btn-primary submit-btn"
+                data-track-click="consulting_form_submit_button"
+                data-track-category="form"
+              >상담 신청 보내기</button>
               <div class="submit-sub">업종 · 상권 · 현재 상태 기준으로 검토 후 연락드립니다.</div>
             </div>
           </form>
@@ -1423,5 +1537,289 @@
       <div>로컬 비즈니스 마케팅 · 플레이스 · 체험단 · 퍼포먼스 마케팅</div>
     </div>
   </footer>
+
+  <script>
+    /* =========================
+       공통 유틸
+    ========================== */
+    function getQueryParam(name) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(name) || '';
+    }
+
+    function getDeviceType() {
+      return window.innerWidth <= 768 ? 'mobile' : 'desktop';
+    }
+
+    function safeStorageSet(key, value) {
+      try { localStorage.setItem(key, value); } catch (e) {}
+    }
+
+    function safeStorageGet(key) {
+      try { return localStorage.getItem(key); } catch (e) { return null; }
+    }
+
+    /* =========================
+       UTM / 유입 정보 저장
+    ========================== */
+    (function initAttribution() {
+      const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+
+      utmKeys.forEach(function(key) {
+        const value = getQueryParam(key);
+        if (value) safeStorageSet(key, value);
+      });
+
+      if (!safeStorageGet('first_referrer')) {
+        safeStorageSet('first_referrer', document.referrer || 'direct');
+      }
+
+      safeStorageSet('landing_page', window.location.href);
+    })();
+
+    /* =========================
+       hidden field 주입
+    ========================== */
+    (function fillHiddenFields() {
+      const mapping = [
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'utm_term',
+        'utm_content',
+        'first_referrer',
+        'landing_page'
+      ];
+
+      mapping.forEach(function(key) {
+        const input = document.getElementById(key);
+        if (input) input.value = safeStorageGet(key) || '';
+      });
+
+      const deviceInput = document.getElementById('device_type');
+      if (deviceInput) deviceInput.value = getDeviceType();
+    })();
+
+    /* =========================
+       GA4 / dataLayer 이벤트 전송
+    ========================== */
+    function pushTrackingEvent(eventName, payload) {
+      const eventPayload = Object.assign({
+        event: eventName,
+        page_location: window.location.href,
+        page_path: window.location.pathname,
+        page_title: document.title,
+        device_type: getDeviceType(),
+        utm_source: safeStorageGet('utm_source') || '',
+        utm_medium: safeStorageGet('utm_medium') || '',
+        utm_campaign: safeStorageGet('utm_campaign') || ''
+      }, payload || {});
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(eventPayload);
+
+      if (typeof gtag === 'function') {
+        gtag('event', eventName, payload || {});
+      }
+
+      if (window.clarity) {
+        try {
+          if (payload && payload.label) {
+            window.clarity('set', eventName, String(payload.label));
+          } else {
+            window.clarity('set', eventName, '1');
+          }
+        } catch (e) {}
+      }
+    }
+
+    /* =========================
+       네이버 전환 추적 로드
+    ========================== */
+    (function initNaverTracking() {
+      const cfg = window.NAVER_CONVERSION_CONFIG;
+      if (!cfg || !cfg.enabled || !cfg.scriptSrc || !cfg.advertiserId) return;
+
+      const script = document.createElement('script');
+      script.src = cfg.scriptSrc;
+      script.async = true;
+      script.onload = function() {
+        if (window.wcs) {
+          if (!window.wcs_add) window.wcs_add = {};
+          window.wcs_add["wa"] = cfg.advertiserId;
+          if (window.wcs.inflow) window.wcs.inflow();
+          if (window.wcs_do) window.wcs_do();
+        }
+      };
+      document.head.appendChild(script);
+    })();
+
+    function fireNaverConversion() {
+      const cfg = window.NAVER_CONVERSION_CONFIG;
+      if (!cfg || !cfg.enabled) return;
+      if (window.wcs && window.wcs.trans) {
+        try {
+          window.wcs.trans({
+            type: cfg.conversionType || 'application'
+          });
+        } catch (e) {}
+      }
+    }
+
+    /* =========================
+       클릭 이벤트 추적
+    ========================== */
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('[data-track-click]');
+      if (!target) return;
+
+      const label = target.getAttribute('data-track-click');
+      const category = target.getAttribute('data-track-category') || 'click';
+      const text = (target.textContent || '').trim();
+
+      pushTrackingEvent('button_click', {
+        category: category,
+        label: label,
+        button_text: text
+      });
+    });
+
+    /* =========================
+       스크롤 깊이 추적
+    ========================== */
+    (function initScrollTracking() {
+      const checkpoints = [25, 50, 75, 90];
+      const fired = {};
+
+      function onScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const docHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        ) - window.innerHeight;
+
+        if (docHeight <= 0) return;
+
+        const percent = Math.round((scrollTop / docHeight) * 100);
+
+        checkpoints.forEach(function(point) {
+          if (percent >= point && !fired[point]) {
+            fired[point] = true;
+            pushTrackingEvent('scroll_depth', {
+              category: 'engagement',
+              label: point + '%',
+              percent_scrolled: point
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    /* =========================
+       폼 시작 / 제출 추적
+    ========================== */
+    (function initFormTracking() {
+      const form = document.getElementById('consulting-form');
+      if (!form) return;
+
+      let started = false;
+
+      form.addEventListener('focusin', function() {
+        if (started) return;
+        started = true;
+        pushTrackingEvent('form_start', {
+          category: 'form',
+          label: 'consulting_form'
+        });
+      });
+
+      form.addEventListener('submit', function() {
+        pushTrackingEvent('generate_lead', {
+          category: 'conversion',
+          label: 'consulting_form_submit'
+        });
+
+        pushTrackingEvent('form_submit', {
+          category: 'form',
+          label: 'consulting_form_submit'
+        });
+
+        fireNaverConversion();
+      });
+    })();
+
+    /* =========================
+       페이지 체류 시간 단순 추적
+    ========================== */
+    (function initTimeTracking() {
+      const start = Date.now();
+      let fired30 = false;
+      let fired60 = false;
+
+      setInterval(function() {
+        const seconds = Math.floor((Date.now() - start) / 1000);
+
+        if (seconds >= 30 && !fired30) {
+          fired30 = true;
+          pushTrackingEvent('engaged_30s', {
+            category: 'engagement',
+            label: '30_seconds'
+          });
+        }
+
+        if (seconds >= 60 && !fired60) {
+          fired60 = true;
+          pushTrackingEvent('engaged_60s', {
+            category: 'engagement',
+            label: '60_seconds'
+          });
+        }
+      }, 5000);
+    })();
+
+    /* =========================
+       외부 링크 클릭 추적
+    ========================== */
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a[href]');
+      if (!link) return;
+
+      const href = link.getAttribute('href') || '';
+      const isExternal = href.startsWith('http') && !href.includes(location.hostname);
+
+      if (isExternal) {
+        pushTrackingEvent('external_link_click', {
+          category: 'outbound',
+          label: href
+        });
+      }
+    });
+
+    /* =========================
+       네이버 플레이스 링크용 추적 함수 예시
+       추후 플레이스 버튼 추가시 onclick에 사용
+       onclick="trackPlaceClick('main_place_link')"
+    ========================== */
+    function trackPlaceClick(label) {
+      pushTrackingEvent('place_link_click', {
+        category: 'naver_place',
+        label: label || 'place_link'
+      });
+    }
+
+    /* =========================
+       전화 클릭용 추적 함수 예시
+       추후 tel 링크 추가시 onclick에 사용
+       onclick="trackPhoneClick('header_phone')"
+    ========================== */
+    function trackPhoneClick(label) {
+      pushTrackingEvent('phone_click', {
+        category: 'contact',
+        label: label || 'phone_link'
+      });
+    }
+  </script>
 </body>
 </html>
